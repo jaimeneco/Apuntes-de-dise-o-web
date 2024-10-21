@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+
+        }
+        .box {
+            display: inline;
+            width: 100px;
+            height: 100px; 
+            padding: 5px;
+            margin: 10px;
+
+            /* sombra interna */
+            box-shadow:  inset 10px 10px 10px rgb(rgb(82, 13, 13));
+            
+            /* Borde dibujado a mano */
+            border-radius: 255px 15px 225px 15px / 15px 225px 15px 225px;
+            
+            /* sombra de la caja */
+            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0,5) );
+         
+            /* color de texto */
+            color:white;
+            border: 4px solid black;
+            background-color: rgb(209, 164, 164);
+
+        }
+
+        .boxGrow {
+            flex-grow: 1;
+            display: inline;
+            padding: 5px;
+            margin: 10px;
+
+            /* sombra interna */
+            box-shadow:  inset 10px 10px 10px rgb(rgb(82, 13, 13));
+            
+            /* Borde dibujado a mano */
+            border-radius: 255px 15px 225px 15px / 15px 225px 15px 225px;
+            
+            /* sombra de la caja */
+            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0,5) );
+         
+            /* color de texto */
+            color:white;
+            border: 4px solid black;
+            background-color: rgb(209, 164, 164);
+
+        }
+        .boxDoble{
+            width: 200px;
+         }
+         .flexx{
+            display: flex ;
+            gap: 50px;
+
+         }
+
+         .ej1{
+            flex-direction: column;
+            flex-direction: column-reverse;
+            flex-direction: row;
+            flex-direction: row-reverse;
+         }
+
+         .ej2{
+            flex-wrap: nowrap; 
+            flex-wrap: wrap;
+            flex-wrap: wrap-reverse;
+         }
+
+         .ej3{
+            flex-direction: column;
+            justify-content: flex-start; /* por defecto a la izquierda */
+            justify-content: flex-end; /* por defecto a la derecha o abajo */
+            justify-content: center;
+            justify-content: space-evenly;
+            justify-content: space-between;
+            justify-content: space-around; /* hacen que haya espacios alrededor de los elementos, un poco un mix entre los dos anteriores */
+         }
+
+         .ej4{
+            align-items: flex-start;
+            align-items: flex-end;
+
+            align-items: baseline;
+            align-items: stretch;
+
+         }
+         .purplebox{
+            background-color: aqua;
+            padding: 5px;
+            height: 1000px ;
+         }
+
+
+        </style>
+
+</head>
+
+<body>
+    <h1>Flexbox</h1>
+    <h2>Flex direction</h2>
+<!-- cuando quieres cambiar la dirección de las cajas (del 1 al 6 o del 6 al 1) -->
+    <div class="flexx ej1">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+    </div>
+
+    <h2>Flex Wrap</h2>
+<!-- cuando las cajas no entran en pantalla, es una orden de que se vayan para abajo las cajas -->
+    <div class="flexx ej2">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        </div>
+    
+    <h2>Justify Content</h2>
+<!-- como distribuir en el eje principal (el eje vertical) -->
+     <div class="flexx ej3 purplebox">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+            </div>
+    
+    <h2>Align items</h2>
+
+    <div class="flexx ej4">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4 Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+    </div>
+    
+    <h2>Flex Grow</h2>
+
+        <div class="flexx ej4">
+            <div class="boxGrow">1</div>
+            <div class="boxGrow">2</div>
+            <div class="boxGrow">3</div>
+            <div class="boxGrow">4</div> 
+            <div class="boxGrow">5</div>
+            <div class="boxGrow">6</div>
+
+    </div>
+</body>
+</html>

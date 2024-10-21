@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día 5 - 21 Oct</title>
+    <style>
+        * {
+            box-sizing: border-box;
+
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            padding: 5px;
+            margin: 10px;
+
+            /* sombra interna */
+            box-shadow:  inset 10px 10px 10px rgb(rgb(82, 13, 13));
+            
+            /* Borde dibujado a mano */
+            border-radius: 255px 15px 225px 15px / 15px 225px 15px 225px;
+            
+            /* sombra de la caja */
+            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0,5) );
+         
+            /* color de texto */
+            color:white;
+            border: 4px solid black;
+            background-color: rgb(209, 164, 164);
+
+        }
+
+
+        .inline{
+            display: inline;
+        }
+
+
+        .block{
+            display: block
+        }
+
+/* lo amarillo (las clases)pueden ser las palabras que queramos. Lo naranja no, son normas */
+        .inline-block{
+            display: inline-block;
+        }
+
+        .hidden {
+            display:none
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Display</h1>
+
+    <h2>Display Inline</h2>
+
+    <div>
+        Ejemplo inline
+        <span class="box inline">Caja 1</span> y
+        <span class="box inline">Caja 2</span> Estos elementos no tinen height ni width, tampoco puedo aplicar top/bottom margin.
+
+    </div>
+
+    
+    <h2>Display block</h2>
+    
+    <div> 
+        Ejemplo block: soporta el width y el height
+        <span class="box block">Caja 1</span>
+        <span class="box block">Caja 2</span>
+    </div>
+     
+    
+    <h2>Display inline-block</h2>
+    <!-- mezcla entre 2 elementos, combinar ambas opciones -->
+    <div>
+        Ejemplo inline-block. Permite usar width y height 
+        <span class="box inline-block">Caja 1</span>
+        <span class="box inline-block">Caja 2</span>
+    <br>
+    El inline-block se comporta como block pero sin agregar el break line al final.
+    </div>
+
+
+    
+    <h2>Display none</h2>
+    <div>
+         <span class="box inline-block">Caja 1</span>
+         <!-- Para hacer funciones de que algo aparezca y desaparezca en la web. En este ejemplo la caja 2 no debería verse. -->
+        <span class="box inline-block hidden">Caja 2</span>
+         <span class="box inline-block">Caja 3</span>
+   
+        </div>
+        
+    <h2>Display flex</h2>
+    <div>
+
+        
+    </div>
+
+  
+
+</body>
+</html>

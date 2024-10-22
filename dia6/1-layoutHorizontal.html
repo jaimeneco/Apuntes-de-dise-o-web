@@ -1,81 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1- Layout Horizontal</title>
 
-<style>
-    /* RESET CSS */
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+    <style>
+        /* RESET CSS */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    .container {
-        background: lightblue;
-        display: flex;
-    }
-    .sidebar {
-        background-color: #f5f5dc;
-        width: 200px;
-        padding: 20px;
-    }
+        .container {
+            background: lightblue;
+            display: flex;
+        }
 
-    .content{
-        padding: 20px;
-        flex: 1; /* flex-grow + flex-shrink + flex-basis */
-    }
-    .sidebar ul{ 
-        list-style: none; /* quitar decoración de las listas*/
+        .sidebar {
+            background-color: #f5f5dc;
+            width: 200px;
+            padding: 20px;
+        }
 
-    }
-    body, .container .sidebar ul{
-        padding: 1px;
+        .content {
+            padding: 20px;
+            flex: 1;
+            /* flex-grow + flex-shrink + flex-basis */
+        }
 
-    }
-    #sidebar-ul {
-        list-style: none;
+        .sidebar ul {
+            list-style: none;
+            /* quitar decoración de las listas*/
+
+        }
+
+        body,
+        .container .sidebar ul {
+            padding: 1px;
+
+        }
+
+        #sidebar-ul {
+            list-style: none;
 
 
-    }
-    .container {
-        padding: 1px;
-    }
-    
-    
-    .sidebar a {
-        text-decoration: none;
-        color:black;
+        }
 
-    }
+        .container {
+            padding: 1px;
+        }
 
-</style>
+
+        .sidebar a {
+            text-decoration: none;
+            color: black;
+
+        }
+    </style>
 
 </head>
+
 <body>
     <div class="container">
 
         <div class="sidebar">
-<!-- div.sidebar -->
+            <!-- div.sidebar -->
             <ul id="">
                 <li>Elemento 1</li>
                 <li>Elemento 2</li>
                 <li>Elemento 3</li>
                 <li><a href="./1-layoutHorizontal.html">Home</a></li>
             </ul>
-            <div> 
-            <a href="https://www.w3schools.com/"> Ver más en </a>
+            <div>
+                <a href="https://www.w3schools.com/"> Ver más en </a>
             </div>
         </div>
 
         <div class="content">
-                <h1>Contenido principal</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur id sint nostrum dolore non, explicabo nulla! Ut unde earum obcaecati. A, amet et. Modi quas autem eius nisi ipsum amet. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus vitae maiores sit atque consectetur repellendus aperiam voluptatum, nesciunt molestiae veniam voluptatibus maxime eveniet cumque! Repellendus maiores esse pariatur. Molestias, quas!</p>
+            <h1>Contenido principal</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur id sint nostrum dolore non,
+                explicabo nulla! Ut unde earum obcaecati. A, amet et. Modi quas autem eius nisi ipsum amet. Lorem, ipsum
+                dolor sit amet consectetur adipisicing elit. Possimus vitae maiores sit atque consectetur repellendus
+                aperiam voluptatum, nesciunt molestiae veniam voluptatibus maxime eveniet cumque! Repellendus maiores
+                esse pariatur. Molestias, quas!</p>
         </div>
 
     </div>
-    
+
 </body>
+
 </html>

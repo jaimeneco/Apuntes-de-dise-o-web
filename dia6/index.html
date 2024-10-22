@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinación de ambos</title>
+    <style>
+        /* RESET CSS */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background: rgb(255, 255, 255);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .sidebar {
+            background-color: rgb(196, 196, 196);
+            width: 1500px;
+            padding: 20px;
+        }
+        .content {
+            padding: 20px;
+            display: flex;
+            flex: 1;
+            /* flex-grow + flex-shrink + flex-basis */
+        }
+
+        .header{
+            background-color: rgb(62, 62, 62);
+            display: flex;
+            flex-wrap: wrap;
+            color:white;
+            padding: 10px;
+        }
+        .footer {
+            background-color: rgb(62, 62, 62);
+            display: flex;
+            justify-content: center;
+            color:white;
+            padding: 10px;
+        }
+        
+        
+        .container .sidebar ul .maincontent{
+            padding: 1px;}
+
+      
+
+        
+        .sidebar ul {
+            list-style: none;
+            /* quitar decoración de las listas*/
+
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: black;
+
+        }
+        .p{
+            display: block;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+            Logo
+            Inicio Acerca de Servicios Contacto
+
+        </div>
+
+        <div class="content">
+            <div class="sidebar">
+                <!-- div.sidebar -->
+                <h2>Barra lateral</h2>
+                <ul id="">
+                    <li><a href="./1-layoutHorizontal.html">Enlace 1</a></li>
+                    <li><a href="./1-layoutHorizontal.html">Enlace 2</a></li>
+                    <li><a href="./1-layoutHorizontal.html">Enlace 3</a></li>
+                </ul>
+                <div>
+                    <a href="https://www.w3schools.com/"> Ver más en </a>
+                </div>
+
+            </div>
+            <div class="Maincontent">
+                <h2>Contenido principal</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus quibusdam soluta quaerat
+                    rem dolore. Maxime pariatur alias accusantium ducimus quasi voluptatibus quae aspernatur! Eum,
+                    perferendis nihil aliquam quasi quisquam sequi.
+                    Accusantium quis labore eos veritatis optio eveniet, corrupti, totam magni molestias consectetur
+                    dicta culpa. Quod suscipit corporis nisi beatae soluta nemo rerum! Eligendi rerum dolor id.
+                    Expedita esse neque temporibus.
+                    Ipsam voluptas, nam saepe sed ducimus suscipit cupiditate assumenda ea obcaecati rem ratione
+                    adipisci placeat. Illo laborum impedit nemo! Quidem excepturi voluptates ipsa recusandae nisi
+                    necessitatibus assumenda tempore deserunt possimus?
+                    Laborum velit pariatur rerum veritatis quos magni reprehenderit voluptatum ullam obcaecati sed
+                    temporibus quis, ad ut alias fugiat expedita eos. Tempora delectus totam animi corporis velit
+                    obcaecati maiores excepturi architecto!
+                    Quibusdam laudantium accusamus possimus voluptates tempore ipsa, iure vel asperiores corporis
+                    necessitatibus sequi, eos vero nam voluptate unde doloremque eum deleniti. Repellendus quidem
+                    aut odit quae, cupiditate nemo porro ratione?</p>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p>Derechos de autor © 2024 Nombre de la empresa</p>
+
+        </div>
+    </div>
+
+    </div>
+</body>
+
+</html>

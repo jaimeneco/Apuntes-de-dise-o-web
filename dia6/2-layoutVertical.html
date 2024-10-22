@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2- Layout Vertical</title>
+
+    <style>
+        /* RESET CSS */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+
+         }
+
+         .header, .footer{
+                background-color: aliceblue;
+                padding: 10px;
+         }
+
+
+         .container{
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /*view hight, todo lo que pueda visualizar. Ocupa el 100% de la altura del Viewport.*/
+         }
+
+         .content{
+            flex: 1;
+            background-color: rgb(211, 211, 211);
+            padding: 10px;
+
+            overflow-y: scroll; /*opcional para ver el final de la página permanentemente*/
+            /*overflow-x: scroll;*/
+         }
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+
+    <div class="header">
+        Header
+    </div>
+
+    <div class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit praesentium laboriosam, at expedita esse rerum est? Nam modi, minima perspiciatis assumenda facere nisi neque? Saepe, exercitationem. Distinctio dignissimos deleniti doloribus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente maxime iste alias ea unde adipisci at quis sint nihil, optio eum voluptatum commodi saepe nobis animi similique nisi praesentium nulla?
+        Minima, dolorem velit pariatur placeat molestiae, rem temporibus aspernatur, recusandae ipsa debitis necessitatibus excepturi qui unde natus dolor quam iure! Architecto sapiente repudiandae unde reiciendis, veritatis numquam corporis provident! Obcaecati.
+        A voluptatibus optio ea, suscipit eius sequi illum iure. Corrupti fugit, nostrum temporibus officiis consequatur delectus quibusdam error! Debitis numquam fugit possimus vero veritatis nihil odio dolorem blanditiis, nisi in!
+        Ducimus error non ut suscipit. Commodi, veritatis cum! Ipsa fuga quae, temporibus illum accusamus nesciunt placeat omnis esse quasi similique odio inventore ad perferendis natus distinctio sint sed qui molestias?
+        Laboriosam dolor repudiandae voluptate libero corrupti illum voluptatibus cumque obcaecati voluptas recusandae quis soluta voluptatem sunt pariatur delectus, nam, earum iusto eaque facere aliquid mollitia. Vitae sint esse nesciunt laboriosam?
+        Placeat obcaecati sunt ea nesciunt quia soluta rerum accusamus corporis impedit veritatis quam nihil ducimus unde velit voluptas facilis dolore, quae et! Corrupti non facere ratione sit iure dolor molestias.
+        Beatae perferendis obcaecati quos accusamus sunt reiciendis quasi veniam commodi ea, cupiditate in omnis excepturi sequi provident maiores ut dolor voluptatem architecto perspiciatis quidem tempore delectus dolorem repellat odio. Consectetur!
+        Facere dignissimos tempora nihil rem temporibus quibusdam blanditiis a fugit optio ut nemo nulla, recusandae animi voluptates dolorem odio iure saepe nam fuga magni, perferendis in officiis quas amet. Obcaecati!
+        Voluptate facilis est nostrum unde dolor animi architecto obcaecati autem quas. Ipsum, nobis minima? Eaque ut illum, eveniet soluta corporis cupiditate dolorem sequi saepe? Quos, at. Vel placeat nulla dolores.
+        Velit libero accusantium dolorum quos facere omnis aspernatur earum amet sed maiores odio dolore optio eveniet iste, eos iure enim nulla et reprehenderit odit magnam! Nostrum, maxime? Iure, aliquam inventore?
+    </div>
+
+    <div class="footer">
+        Footer
+    </div>
+
+    </div>
+</body>
+
+</html>

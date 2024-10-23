@@ -14,46 +14,54 @@
         }
 
         .container {
-            background: rgb(255, 255, 255);
             display: flex;
             flex-direction: column;
             height: 100vh;
         }
 
-        .sidebar {
-            background-color: rgb(196, 196, 196);
-            width: 1500px;
-            padding: 20px;
-        }
         .content {
-            padding: 20px;
             display: flex;
             flex: 1;
-            /* flex-grow + flex-shrink + flex-basis */
+            overflow-y: scroll;
         }
 
-        .header{
+        .sidebar {
+            background-color: rgb(196, 196, 196);
+            padding: 30px;
+        }
+
+       .sidebar ul{
+            list-style: none;
+       }
+
+       .barra2{
+            display: flex;
+       }
+
+        .header {
             background-color: rgb(62, 62, 62);
             display: flex;
-            flex-wrap: wrap;
-            color:white;
+            justify-content: space-between;
+            color: white;
             padding: 10px;
         }
+
         .footer {
             background-color: rgb(62, 62, 62);
             display: flex;
             justify-content: center;
-            color:white;
+            color: white;
             padding: 10px;
         }
-        
-        
-        .container .sidebar ul .maincontent{
-            padding: 1px;}
 
-      
 
-        
+        .container .maincontent {
+            padding: 10px;
+        }
+
+        .maincontent
+
+
         .sidebar ul {
             list-style: none;
             /* quitar decoración de las listas*/
@@ -65,8 +73,17 @@
             color: black;
 
         }
-        .p{
+
+        .p {
             display: block;
+        }
+
+        .logo {
+            display: inline-block;
+        }
+        .barra1{ 
+            display: flex;
+            gap:10px
         }
     </style>
 
@@ -77,8 +94,14 @@
     <div class="container">
 
         <div class="header">
-            Logo
-            Inicio Acerca de Servicios Contacto
+            <div id="logo">Logo</div>
+            
+                <ul class="Barra1">
+                    <li>Inicio</li>
+                    <li>Acerca de</li>
+                    <li>Servicios</li>
+                    <li>Contactos</li>
+            </ul>
 
         </div>
 
@@ -86,15 +109,11 @@
             <div class="sidebar">
                 <!-- div.sidebar -->
                 <h2>Barra lateral</h2>
-                <ul id="">
+                <ul id="barra2">
                     <li><a href="./1-layoutHorizontal.html">Enlace 1</a></li>
                     <li><a href="./1-layoutHorizontal.html">Enlace 2</a></li>
                     <li><a href="./1-layoutHorizontal.html">Enlace 3</a></li>
                 </ul>
-                <div>
-                    <a href="https://www.w3schools.com/"> Ver más en </a>
-                </div>
-
             </div>
             <div class="Maincontent">
                 <h2>Contenido principal</h2>

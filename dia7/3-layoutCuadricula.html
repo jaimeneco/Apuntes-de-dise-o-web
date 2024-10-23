@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3- Layout cuadrícula / grid</title>
+
+    <style>
+        /* Reset de CSS */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .grid-container{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px
+
+        }
+
+
+        .card {
+            background-color: gray;
+            color: white;
+            padding: 20px;
+            
+            /* Se puede abreviar las 3 de abajo por solo el flex con los numeritos. Cuando ponemos flex: 1 en realidad es flex: 1 1 auto */
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: 200px; /* valor inicial de las cards */
+
+            /* flex;1 0 200px /Así lo veremos normalmente */
+        }
+
+
+    </style>
+
+
+
+</head>
+<body>
+    <div class="grid-container">
+
+        <div class="card">Tarjeta 1</div>
+        <div class="card">Tarjeta 2</div>
+        <div class="card">Tarjeta 3</div>
+        <div class="card">Tarjeta 4</div>
+        <div class="card">Tarjeta 5</div>
+        <div class="card">Tarjeta 6</div>
+
+
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            display: block;
+            margin: 10px
+        
+        }
+    </style>
+</head>
+<body>
+    <h1>Registro de usuarios</h1>
+
+    <form action="./registro.html" method="GET">
+
+        <fieldset>
+            <legend>Información Básica</legend>
+
+        <label for="user">Nombre</label>
+            <input id="user" placeholder="Ingresa tu usuario" type="text" name="user" required>
+
+        <label for="mail">Email</label>
+            <input id="mail" type="email" name="mail" required>
+
+        <label for="pass">Password</label>
+            <input id="pass" type="password" name="pass" required>
+
+        <label for="pass2">Confirmar password</label>
+            <input id="pass2" type="password" name="pass2" required>
+
+        <label for="edad">Edad</label>
+            <input id="edad" type="number" name="edad" required>
+
+        <!-- Género: Los grupos de botones de radio deben tener SIEMPRE el mismo NAME ¡¡Es muy importante!! -->
+         <p>Género:</p>
+            <label>Hombre<input type="radio" name="gender" value="Male" required></label>
+            <label>Mujer<input type="checkbox" name="gender" value="Female" required></label>
+<!--El checkbox deben tener el NAME distinto, porque se comportan diferente-->
+
+        <label for="info">Descripción</label> <br>
+        <textarea id="info" name="descripcion" cols="20" rows="10" placeholder="Descripción"></textarea>
+        
+        <input type="submit" value="Registrarse">
+
+        </fieldset>
+
+        
+
+
+
+    </form>
+    
+</body>
+</html>

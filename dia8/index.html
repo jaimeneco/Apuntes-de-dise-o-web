@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etiquetas nuevas HTML</title>
+
+<style>
+    input{
+        display: block;
+        margin: 10px
+    }
+
+    form{
+        background-color: beige;
+    }
+</style>
+</head>
+<body>
+    <h1>Login de Usuarios</h1>
+
+    <form action="./index.html" method="GET">
+        <!-- La variable get empieza con una ? q= y un nombre + aparece toda la información en la url // el method POST es un poco más privado, no aparece tanta info en el url // todos los inputs es súper importante que tengan NAME, que aparecerá dando información en la url // el label hay que vincularlo a un elemento, es por eso que ponemos el mismo id en el input y el for en el user // required se puede poner después del name para decirle que primero hay que rellenar eso y luego lo otro-->
+         <h2>Soy un formulario</h2>
+        
+        <label for="user">Usuario</label> 
+         <input id="user" type="text" name="user">
+
+        <label for="pass">Clave</label> 
+         <input id="pass" type="password" name="pass">
+
+        <label for="numb">Número</label>
+         <input id="numb" type="number" name="numb">
+        
+         <input type="submit" value="Login">
+        <!-- Type: text: se ve el texto // Type: password: no puedes ver el texto, estrellitas // Type: number sólo nos permitirá poner números // Type: submit con el atributo value y el texto que queramos que tenga el botón // email - tel  -->
+
+
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 300px;
+            position: relative;
+            /*puede ser cualquiera menos el static*/
+        }
+
+        img {
+            width: 100%;
+            /* coge el tamaño del padre, es decir, en este caso del container (300px) */
+            opacity: 0.5;
+            /*50% de tralucido*/
+        }
+
+        .box {
+            position: absolute;
+            border: 1px solid #ff0000;
+
+        }
+
+
+        .topleft {
+            top: 10px;
+            left: 10px;
+        }
+
+        .topright {
+            top: 10px;
+            right: 10px;
+
+        }
+
+        .center {
+            top: 50%;
+            /* width: 100%;
+            text-align: center; */
+
+        /*centrado perfecto*/
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .bottomleft {
+            bottom: 10px;
+            left: 10px;
+
+        }
+
+        .bottomright {
+            bottom: 10px;
+            right: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Position Absolute Perrito</h1>
+    <br>
+    <p>Recrear esta imagen en HTML, utilizando position.</p><br>
+
+
+    <div class="container">
+        <img src="img/bp-lot-2-french-bulldog-couleur-bw-2.png" alt="imagenPerro">
+        <div class="box topleft">Arriba-Izq</div>
+        <div class="box topright">Arriba-Der</div>
+        <div class="box center">Center (w100)</div>
+        <div class="box bottomleft">Abajo-Izq</div>
+        <div class="box bottomright">Abajo-Der</div>
+    </div>
+
+
+</body>
+
+</html>

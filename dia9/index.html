@@ -50,6 +50,7 @@
         .sticky {
             position: sticky;
         }
+        
     </style>
 </head>
 
@@ -101,16 +102,17 @@
     </div>
 
     <h2>Sticky</h2>
-    <p> </p>
+    <p>Comportamiento combinado entre static y fixed. Utiliza el position top y left como punto de adhesión. Se posiciona respecto a la ventana del navegador(viewport)y se queda fijo en la pantalla hasta que el elemento padre se acaba. </p>
     <div class="container" style=" height:300px;
             width:400px;
             overflow: scroll;
+            padding: 20px;
             border: 1px solid gray;
             ">
 
         <div class="box"></div>
         <div class="box yellow sticky">Sticky</div>
-        <div class="box" style="height:200px"></div>
+        <div class="box" style="height:2000px"></div>
     </div>
 
 

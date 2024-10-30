@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad Media Queries</title>
+   
+    <!-- importar el CSS -->
+    <link rel="stylesheet" href="./css/actividad-mq.css">
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h1 class="title-mobile">Mobile</h1>
+            <h1 class="title-tablet">Tablet</h1>
+            <h1 class="title-desktop">Desktop</h1>
+        </div>
+
+        <picture>
+            <!-- tablet -->
+            <source media="" srcset="img/igm-motos-cr-negra.jpeg">
+            <!-- desktop -->
+            <source media="" srcset="./img/foto-desktop">
+
+            <!-- imagen principal (mobile first) -->
+            <img src="img/161504-800-auto.jpeg" alt="Foto del perro" class="mifoto">
+        </picture>
+    </div>
+</body>
+
+</html>

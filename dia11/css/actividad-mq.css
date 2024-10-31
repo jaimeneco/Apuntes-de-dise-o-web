@@ -1,3 +1,12 @@
 body {
     color: red;
+    background-color: lightgreen;
+}
+
+/* screen: son pantallas y dispositivos a color, móvil, tablet, pc */
+@media screen and (min-width:650px) {
+
+    body{
+        background-color: lightblue;
+    }
 }

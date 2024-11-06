@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidades de medidas CSS</title>
+
+    <style>
+        html {
+            font-size: 10px;
+        }
+
+        .px-box {
+            font-size: 1rem;
+            width: 200px;
+            height: 100px;
+            background-color: aqua;
+        }
+
+        .em-box {
+            padding: 2em;
+            width: 20em;
+            height: 10em;
+            background-color: lightcoral;
+        }
+
+        .rem-box {
+            font-size: 1rem;
+            width: 10rem;
+            /* XXX px */
+            height: 5rem;
+            /* XXX px */
+            background-color: lightgreen;
+        }
+
+        .percent-box {
+            font-size: 1rem;
+            width: 50%;
+            height: 50px;
+            background-color: lightpink;
+        }
+
+        .padre {
+            font-size: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Ejemplo de unidades de medidas de CSS</h1>
+
+    <div class="padre">
+        <div class="button" style="background-color: lightgreen; color: white ;padding: 10px">
+            botón
+        </div>
+        <div class="px-box">Caja con medidas en px (200px x 100px)</div>
+        <div class="em-box">Caja con medidas en em (20em x 10em)</div>
+        <div class="rem-box">Caja con medidas en rem (10rem x 5rem)</div>
+        <div class="percent-box">Caja con medidas en % (50% del contenedor)</div>
+
+        
+    </div>
+
+
+
+
+</body>
+
+</html>

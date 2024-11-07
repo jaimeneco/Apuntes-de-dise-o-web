@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .gridContainer {
+            display: grid;
+            grid-template-columns: 100px 100px 100px 100px 100px 100px ;
+            grid-template-rows: 100px 100px 50px;
+            gap: 10px;
+        }
+
+        .gridContainer {
+            width: 90vw;
+            border: 5px solid black ;
+            height: 500px;
+        }
+        .item {
+            border: 2px solid blue ;
+            background-color: lightblue;
+            opacity: 0.5 ;
+        }
+        .item.item-1{
+            background-color: green;
+            grid-row-start: 1;
+            grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 6; /*Si quieres ocupar la columna 4, debes poner que vaya a la número 5 porque no es inclusive con el nº*/
+        }
+        .item.item-2{
+            background-color: red;
+            grid-row-start: 2;
+            grid-row-end: 4;
+            grid-column-start: 4;
+            grid-column-end: 6;
+
+        }
+        .item.item-3{
+            background-color: burlywood;
+            grid-row-start: 3;
+            grid-row-end: 4;
+            grid-column-start: 1;
+            grid-column-end: 7;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="gridContainer">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+
+    </div>
+</body>
+
+</html>

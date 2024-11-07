@@ -1,0 +1,95 @@
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.header {
+    display: flex;
+    background-color: #ffffff;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.header--logo {
+    justify-content: center;
+}
+.header--logo__img {
+    width: 40%;
+    padding: 5px;
+    justify-content: center;
+}
+
+.section--catastrofes{
+    text-align: center;
+    margin-top: 20px;
+}
+
+main{
+    display: flex;
+    background-color: beige;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.card--container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 20px;
+}
+
+.card {
+    display: flex;
+    border-radius: 15px;
+    flex-direction: column;
+    background-color: rgba(135, 206, 250, 0.325);
+    color: white;
+    width: 400px;
+    flex: 1 0 220px;
+    margin: 10px;
+    box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+.card--h3{
+    margin: 10px;
+    text-align: justify;
+    justify-content: center;
+}
+.card--img {
+        width: 400px; /* Cambia el ancho */
+        height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
+        border-radius: 15px; /* Redondea las esquinas */
+}
+
+.card--text {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 20px;
+    text-align: justify;
+    justify-content: center;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.card--button {
+    background: white;
+    border-radius: 10px;
+    border: 0;
+    color: white;
+    margin-top: 30px;
+    padding: 10px 10px ;
+    width: 100%;
+    
+}
+button:hover{
+    opacity: 0.8;
+}
+
+@media screen and(min-width:600px){
+    
+}
+

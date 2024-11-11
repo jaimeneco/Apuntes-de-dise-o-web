@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transiciones 1</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .box1 {
+            /* la transición siempre va a ir en el efecto que siempre está visible (nunca en el hover)*/
+            transition: width 2s, height 2s, background-color 2s;
+        }
+
+        .box1:hover {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+
+        .box2 {
+            transition: width 2s ease-in-out 2s;
+            /*Propiedades de ease: linear, ease-in ease-out, cubic-zeier() */
+        }
+
+        .box2:hover {
+            width: 500px;
+        }
+
+        .box3 {
+            transition: all 1s;
+            /*NO USAR ALL*/
+            border: 1px dotted green;
+        }
+
+        .box3:hover {
+            border: 4px dotted blue;
+            rotate: 70deg;
+        }
+
+        .box3:focus { /*Comportamiento cuando se hace click*/
+            background-color: green;
+        }
+
+        .button {
+            background-color: green;
+            width: 100px;
+            transition: width 2s ease 0.4s, background-color 2s ease 0.4s;
+        }
+
+        .button:hover {
+            background-color: yellow;
+            width: 200px;
+        }
+
+        .cubos{
+            display: flex;
+            gap: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="cubos">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <a href="#" class="box box3">Click me</a>
+    </section>
+
+    <button class="button">Ver más</button>
+</body>
+
+</html>

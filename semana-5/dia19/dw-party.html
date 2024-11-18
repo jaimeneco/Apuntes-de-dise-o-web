@@ -13,12 +13,13 @@
 <body class="body">
     <header class="header">
         <p class="header__title">Soy header</p>
-        <button class="header__button"> Modo oscuro/claro</button>
+        <button id="header__button"> Modo oscuro/claro </button>
     </header>
 
     <main class="contenido">
         <section class="hero">
-            <img class="main__hero" src="./imgs/Captura de pantalla 2024-10-29 a las 19.28.51.png">
+            <h1>Web party de DW!</h1>
+            <img class="main__hero" src="./imgs/Captura de pantalla 2024-10-29 a las 19.28.51.png" alt="simp-foto">
         </section>
 
         <section class="container">
@@ -28,17 +29,17 @@
         </section>
 
         <div class="galeria">
-                <img src="./imgs/Captura de pantalla 2024-10-29 a las 19.28.51.png" alt="simp-foto" class="imagen1">
-                <img src="./imgs/Captura de pantalla 2024-10-29 a las 19.28.51.png" alt="simp-foto" class="imagen2">
-                <img src="./imgs/Captura de pantalla 2024-10-29 a las 19.28.51.png" alt="simp-foto" class="imagen3">
-                <img src="./imgs/Captura de pantalla 2024-10-29 a las 19.28.51.png" alt="simp-foto" class="imagen4">
-                <img src="./imgs/Captura de pantalla 2024-10-29 a las 19.28.51.png" alt="simp-foto" class="imagen5">
-                <img src="./imgs/Captura de pantalla 2024-10-29 a las 19.28.51.png" alt="simp-foto" class="imagen6">
-                <img src="./imgs/Captura de pantalla 2024-10-29 a las 19.28.51.png" alt="simp-foto" class="imagen7">
-                <img src="./imgs/Captura de pantalla 2024-10-29 a las 19.28.51.png" alt="simp-foto" class="imagen8">
-                <img src="./imgs/Captura de pantalla 2024-10-29 a las 19.28.51.png" alt="simp-foto" class="imagen9">
+            <img src="./imgs/Captura de pantalla 2024-10-29 a las 19.28.51.png" alt="simp-foto" class="galeria__img">
+            <img src="./imgs/Captura de pantalla 2024-10-29 a las 19.28.51.png" alt="simp-foto" class="galeria__img">
+            <img src="./imgs/Captura de pantalla 2024-10-29 a las 19.28.51.png" alt="simp-foto" class="galeria__img">
+            <img src="./imgs/Captura de pantalla 2024-10-29 a las 19.28.51.png" alt="simp-foto" class="galeria__img">
+            <img src="./imgs/Captura de pantalla 2024-10-29 a las 19.28.51.png" alt="simp-foto" class="galeria__img">
+            <img src="./imgs/Captura de pantalla 2024-10-29 a las 19.28.51.png" alt="simp-foto" class="galeria__img">
+            <img src="./imgs/Captura de pantalla 2024-10-29 a las 19.28.51.png" alt="simp-foto" class="galeria__img">
+            <img src="./imgs/Captura de pantalla 2024-10-29 a las 19.28.51.png" alt="simp-foto" class="galeria__img">
+            <img src="./imgs/Captura de pantalla 2024-10-29 a las 19.28.51.png" alt="simp-foto" class="galeria__img">
         </div>
-        
+
     </main>
 
     <sidebar class="sidebar">
@@ -48,6 +49,22 @@
     <footer class="footer">
         <p>Soy un footer</p>
     </footer>
+
+    <script>
+        const btn = document.querySelector("#header__button")
+
+        const elbody = document.querySelector("body")
+
+        const caja = document.querySelector("container__caja")
+
+        btn.addEventListener("click", () => {
+            elbody.classList.toggle("modo-oscuro")
+        });
+        caja.addEventListener("click", () => {
+                caja.innerHTML="Me han activado!";
+                caja.classList.add("isActivated")
+        })
+    </script>
 </body>
 
 </html>

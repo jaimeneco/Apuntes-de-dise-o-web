@@ -6,15 +6,18 @@
 
 .body {
     display: grid;
-    flex-wrap: wrap;
     grid-template-rows: 100px 1fr 100px;
-    grid-template-columns: repeat (3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
         "header header header"
         "main main sidebar"
         "footer footer footer";
 }
-
+body{
+    background-color: #ffffff;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
 /* Estilos para el modo oscuro */
 body.dark-mode {
     background-color: #1c1c1c;
@@ -28,8 +31,9 @@ body.dark-mode {
     justify-content: space-between;
     align-items: center;
     background-color: lightcoral;
-    padding: 10px;
+    padding: 20px;
 }
+
 .header__button {
     padding: 10px 10px;
     margin-top: 0px;
@@ -39,107 +43,73 @@ body.dark-mode {
     border: none;
 
 }
-.header__title{
+
+.header__title {
     align-items: center;
 }
 
-.contenido{
+.contenido {
     grid-area: main;
     display: flex;
     flex-direction: column;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: 1fr 1fr 1fr;
     justify-content: center;
     align-items: center;
     background-color: lightblue;
     padding: 5px;
 }
+
 .container {
+    display: flex;
     background-color: red;
+    width: 100%;
+    justify-content: center;
 }
-.container .container__caja{
-    background-color: red;
-    padding: 10px;
-    color:white;
-    transition:all 1s;
-    }
 
-.container .container__caja:hover {
-        rotate: 90deg;
-    }
-
-.container__caja:focus { /*Comportamiento cuando se hace click*/
-        background-color: green;
-
+.container__caja {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    width: 20%;
+    padding: 20px;
+    color: white;
+    transition: all 1s;
+    justify-content: center;
 }
-.container__caja{
+
+.container:hover .container__caja {
+    rotate: 90deg;
+}
+
+.container .container__caja:focus {
+    /*Comportamiento cuando se hace click*/
+    background-color: green;
+}
+
+.container__caja {
     text-align: center;
 }
-.container__caja:hover{
 
-}
-
-.galeria{
+.galeria {
     display: grid;
-    grid-template-areas: 
-        "imagen1 imagen2 imagen3"
-        "imagen4 imagen5 imagen6"
-        "imagen7 imagen8 imagen9";
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+
     
 }
 
-.imagen1{
-    grid-area: imagen1;
-    width: 600px;
-    height: 400px;
-}
-.imagen2{
-    grid-area: imagen2;
-    width: 600px;
-    height: 400px;
-}
-.imagen3{
-    grid-area: imagen3;
-    width: 600px;
-    height: 400px;
-}
-.imagen4{
-    grid-area: imagen4;
-    width: 600px;
-    height: 400px;
-}
-.imagen5{
-    grid-area: imagen5;
-    width: 600px;
-    height: 400px;
-}
-.imagen6{
-    grid-area: imagen6;
-    width: 600px;
-    height: 400px;
-}
-.imagen7{
-    grid-area: imagen7;
-    width: 600px;
-    height: 400px;
-}
-.imagen8{
-    grid-area: imagen8;
-    width: 600px;
-    height: 400px;
-}
-.imagen9{
-    grid-area: imagen9;
-    width: 600px;
-    height: 400px;
+.galeria .galeria__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, scale 0.5s ease, box-shadow 0.5s ease;
 }
 
-.imagen1 .imagen2 .imagen3 .imagen4 .imagen5 .imagen6 .imagen7 .imagen8.imagen9:hover {
-        transition:all 1s;
-        rotate: 90deg;
-        }
-    
+.galeria .galeria__img:hover {
+    transform: rotate(10deg);
+    scale:0.9;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
 
 .main__hero {
     display: flex;
@@ -147,7 +117,6 @@ body.dark-mode {
     height: 400px;
     filter: drop-shadow(0);
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4);
-
 }
 
 .sidebar {
@@ -159,7 +128,6 @@ body.dark-mode {
     padding: 10px;
 }
 
-
 .footer {
     grid-area: footer;
     display: flex;
@@ -167,4 +135,4 @@ body.dark-mode {
     align-items: center;
     background-color: lightcoral;
     padding: 10px;
-} 
+}

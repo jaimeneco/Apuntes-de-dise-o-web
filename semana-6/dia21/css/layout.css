@@ -1,6 +1,6 @@
 /*
 https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face
-Losformatos posibles son ttf, truetpy, otf: opentype, woff: woff, 20ff2: woof2*/
+Los formatos posibles son ttf, truetpy, otf: opentype, woff: woff, 20ff2: woof2*/
 
 
 @font-face {
@@ -17,5 +17,27 @@ Losformatos posibles son ttf, truetpy, otf: opentype, woff: woff, 20ff2: woof2*/
 
 .u-txtCrotah {
     font-family: "crotah"; /*para aplicar*/
+}
+
+.Body{
+    display: flex;
+    height: 100vh; /*100% de view height*/
+    flex-direction: column;
+}
+
+.Header{
+    display: flex;
+    justify-content: space-between;
+    padding:10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /*Las dos primeras son de posición, la tercera es la difuminación*/
+    z-index: 2;
+}
+
+.Main{
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 

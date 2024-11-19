@@ -28,16 +28,16 @@
 
 </head>
 
-<body class="Body">
-    <header class="Header">
-        <h1 class="Header__titulo u-txtCrotah">RRSS</h1>
+<body class="Body u-bgPrimary">
+    <header class="Header u-bgPrimary">
+        <h1 class="Header__titulo u-txtCrotah u-txtPrimary">RRSS</h1>
     </header>
 
-    <main class="Main">
-        <article class="Icons">
+    <main class="Main u-bgSecondary">
+        <article class="Icons u-flexCol u-flexRow">
 
             <div class="IconBox u-bgPrimary IconBox--fb">
-                <a href="" class="IconBox-link">
+                <a href="" class="IconBox-Link">
                     <div class="IconBox-layers">
                         <span class="IconBox-span"></span>
                         <span class="IconBox-span"></span>
@@ -54,7 +54,7 @@
             </div>
 
             <div class="IconBox u-bgPrimary IconBox--x">
-                <a href="" class="IconBox-link">
+                <a href="" class="IconBox-Link">
                     <div class="IconBox-layers">
                         <span class="IconBox-span"></span>
                         <span class="IconBox-span"></span>
@@ -71,7 +71,7 @@
             </div>
 
             <div class="IconBox u-bgPrimary IconBox--insta">
-                <a href="" class="IconBox-link">
+                <a href="" class="IconBox-Link">
                     <div class="IconBox-layers">
                         <span class="IconBox-span"></span>
                         <span class="IconBox-span"></span>
@@ -88,7 +88,7 @@
             </div>
 
             <div class="IconBox u-bgPrimary IconBox--lkdin">
-                <a href="" class="IconBox-link">
+                <a href="" class="IconBox-Link">
                     <div class="IconBox-layers">
                         <span class="IconBox-span"></span>
                         <span class="IconBox-span"></span>
@@ -105,7 +105,7 @@
             </div>
 
             <div class="IconBox u-bgPrimary IconBox--yt">
-                <a href="" class="IconBox-link">
+                <a href="" class="IconBox-Link">
                     <div class="IconBox-layers">
                         <span class="IconBox-span"></span>
                         <span class="IconBox-span"></span>
@@ -122,7 +122,7 @@
             </div>
 
             <div class="IconBox u-bgPrimary IconBox--lion">
-                <a href="" class="IconBox-link">
+                <a href="" class="IconBox-Link">
                     <div class="IconBox-layers">
                         <span class="IconBox-span"></span>
                         <span class="IconBox-span"></span>
@@ -139,25 +139,36 @@
             </div>
 
         </article>
-
-
-        <!-- Lo de arriba puede ser un div o un article:
-        
-        <div class="Main__box">Facebook</div>
-        <div class="Main__box">X</div>
-        <div class="Main__box">Instagram</div>
-        <div class="Main__box">Linkedin</div>
-        <div class="Main__box">Youtube</div>
-        <div class="Main__box">Rey León</div> -->
     </main>
 
     <div class="Controllers">
-        <button class="Btn">Columna</button>
-        <button class="Btn Btn--icon">
+        <button id="btnDirection" class="Btn">Columna</button>
+        <button id="btnDarkLight" class="Btn Btn--icon">
+
             <span class="material-symbols-outlined">
             dark_mode
-            </span></button>
+            </span>
+
+        </button>
     </div>
+    <script>
+        // seleccionar elementos // 
+        const btnDirection = document.querySelector("#btnDirection");
+        const btnDarkLight = document.querySelector("#btnDarkLight");
+        const iconsContainer = document.querySelector(".Icons");
+
+        console.log(btnDirection);
+
+        btnDirection.addEventListener("click", () => {
+            
+            // agregar o quitar la clase u-flexCol //
+            iconsContainer.classList.toggle("u-flexCol");
+
+
+            // cambiar el texto del botón //
+
+        })
+    </script>
 
 </body>
 

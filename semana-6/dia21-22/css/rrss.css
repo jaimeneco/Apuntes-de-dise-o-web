@@ -10,8 +10,10 @@
     --yt-color: #f00;
     --lion-color:#db9601;
 }
-
-
+/*Fix para que el icono de Twitter sea blanco en modo oscuro*/
+.u-Dark{
+    --x-color: #fff;
+}
 
 
 .Icons{

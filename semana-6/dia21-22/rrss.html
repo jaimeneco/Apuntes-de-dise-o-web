@@ -11,12 +11,17 @@
     <!-- Importar Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
 
     <!-- Importar íconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 
     <!-- Nuestros estilos -->
@@ -29,12 +34,12 @@
 </head>
 
 <body class="Body u-bgPrimary">
-    <header class="Header u-bgPrimary">
-        <h1 class="Header__titulo u-txtCrotah u-txtPrimary">RRSS</h1>
+    <header class="Header u-bgPrimary u-boxShadow">
+        <h1 class="u-txtCrotah u-txtPrimary">RRSS</h1>
     </header>
 
     <main class="Main u-bgSecondary">
-        <article class="Icons u-flexCol u-flexRow">
+        <article class="Icons">
 
             <div class="IconBox u-bgPrimary IconBox--fb">
                 <a href="" class="IconBox-Link">
@@ -146,28 +151,44 @@
         <button id="btnDarkLight" class="Btn Btn--icon">
 
             <span class="material-symbols-outlined">
-            dark_mode
+                dark_mode
             </span>
 
         </button>
     </div>
+
+
+
     <script>
-        // seleccionar elementos // 
+        //Seleccionar elementos Query Selection//
         const btnDirection = document.querySelector("#btnDirection");
         const btnDarkLight = document.querySelector("#btnDarkLight");
         const iconsContainer = document.querySelector(".Icons");
+        
 
-        console.log(btnDirection);
 
+        //--------------------------------------
+        //    Declaramos las funciones         -
+        //--------------------------------------
         btnDirection.addEventListener("click", () => {
-            
-            // agregar o quitar la clase u-flexCol //
+
+            //Agregar o quitar la clase u-flexCol//
             iconsContainer.classList.toggle("u-flexCol");
 
+            //Cambiar el texto del botón//
+            if (iconsContainer.classList.contains("u-flexCol")) {
 
-            // cambiar el texto del botón //
+                //Si se cumple la condición//
+                console.log("icons SII tiene u-flexCol");
+                btnDirection.textContent = "Fila";
+            } else {
+                //Si no se cumple la condición//
+                console.log("icons NOOO tiene u-flexCol");
+                btnDirection.textContent = "Columna";
 
-        })
+            }
+
+        });
     </script>
 
 </body>

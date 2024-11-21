@@ -71,7 +71,7 @@ alumno.saludar();
 2. Procesar Formularios: verificar datos ingresados por el usuario, y realizar formularios complejos de múltiples secciones.
 3. Manejo de animaciones: manipular efectos visuales y animaciones en nuestra web.
 4. Manejo de eventos: responder a las acciones del usuario. Ej: click, desplazarse por la web.
-5. Comunicación asíncrona con servidores mediante Ajax/Fetch: enviar y recibir datos de un servidor sin tener que recargar la página.
+5. Comunicación asíncrona (poder seguir interactuando mientras haces o has hecho otrs cosas) con servidores mediante Ajax/Fetch: enviar y recibir datos de un servidor sin tener que recargar la página.
 
 ## Variables:
 > Son como CAJAS/CUBOS que utilizamos para guardar información. Esta info puede ser un número, una texto, una lista de cosas y muchos otros tipos más.
@@ -92,14 +92,15 @@ PI=4; //devuelve error, ya que no es cierto.
 
 ## Comentarios en JS:
 - Simple `//`
-- Simple en la misma línea `nombre="Sofía" // soy comentario`
+- Simple en la misma línea `nombre="Sofía"; // soy comentario`
 - Bloque: `/*.......*/`
-- Comentario de Documentación: se utiliza `/**....*/`para bloques de documentación, este se usa para comentarios de funciones y clases.
+- Comentario de Documentación: se utiliza `/** ..... */`para bloques de documentación, este se usa para comentarios de funciones y clases.
 
 ```js
 /**
  * Esta es una función ue suma 2 números
- * la obtuve de esta url: http://mis-sumas
+ * la obtuve de esta url: http://mis-sumas.com
+ * 
  * @param {number} a - El primer número
  * @param {number} b - El segundo número
  * @return {number} La suma de los 2 números anteriores
@@ -119,7 +120,7 @@ function sumar(a,b) {
 - Objeto (Object): colección de propiedades (características) y métodos (funcionalidades) y se escriben con { }.
 
 ```js
-// PRIMITIVOS
+// PRIMITIVOS: elementos simples, textos, números, true/false
 let texto = "Hola alumnos de CEI";
 let textoConComillas= 'Hola estoy "bien" ';
 let textoConComillasSimples= "I'm Tomi";
@@ -145,7 +146,8 @@ let esMenorDeEdad = true;
 
 //REFERENCIALES
 // objetos o arrays (son constantes)
-//Listas / arrays / arreglos
+
+//Listas / arrays / arreglos //La llave del camión alumnosCEI, hace referencia al camión completo de nombres de alumnos CEI(Pepe, Jaime, Laura)
 const alumnosDeDW = ["Daniel", "Jaime", "Laura", "Candela", "Liz"];
 const edades = [25, 32, 30, 29];
 const listaMix = [1, "Juan", true, {edad:18, nombre:"Laura"}];
@@ -168,6 +170,16 @@ let alumno = {
         console.log("Hola, mi nombre es Juan"); // o console.log("Hola, mi nombre es "nombre");
     }
 }
+
+alumno.saludar(pepe);
+let alumno = {
+    nombre:"Juan",
+    edad: 16,
+    saludar: function(name){ 
+        console.log("Hola "+pepe+ ", mi nombre es Juan");
+    }
+}
+
 // actualizar una propiedad
 alumno.edad = 21;
 

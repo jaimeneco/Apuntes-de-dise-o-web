@@ -1,0 +1,115 @@
+<!-- siteinspire.com -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Clicker en JS</h1>
+
+    <button id="btnSuma">Suma 1</button>
+    <button id="btnResta">Resta 1</button>
+
+    <button id="btnMulti">Multiplica por 5</button>
+
+    <button id="btnCero">Volver a 0</button>
+
+    <h3>Cantidad de Clicks</h3>
+    <div id="resultado">0000000</div>
+
+
+    <script>
+
+        /*--------------------------------------------------------
+        1.Declaramos variables y obtenemos nuestros tags del DOM
+        ---------------------------------------------------------*/
+        const btnSuma = document.querySelector("#btnSuma");
+        const btnResta = document.querySelector("#btnResta");
+        const btnMulti = document.querySelector("#btnMulti");
+        const txtResultado = document.querySelector("#resultado");
+        const btnCero = document.querySelector("#btnCero")
+
+        let resultado = 0;
+
+        /*--------------------------------------------------------
+        2. Crear funciones
+        ---------------------------------------------------------*/
+
+        btnSuma.addEventListener("click", () => {
+            console.clear();
+            console.warn("Click en sumar");
+
+            resultado++;  // o esta forma: resultado = resultado + 1; Ambas funcionan.
+
+            // Imprimir resultado en la consola
+            console.log(resultado);
+            txtResultado.innerHTML = resultado;
+        });
+
+
+        btnResta.addEventListener("click", () => {
+            console.clear();
+            console.warn("Click en restar");
+
+            resultado--;  // o esta forma: resultado = resultado - 1; Ambas funcionan.
+
+            // Imprimir resultado en la consola
+            console.log(resultado);
+            txtResultado.innerHTML = resultado;
+        });
+
+        btnMulti.addEventListener("click", () => {
+            console.clear();
+            console.warn("Click en multiplicar");
+
+            resultado = resultado * 5;
+
+            // Imprimir resultado en la consola
+            console.log(resultado);
+            txtResultado.innerHTML = resultado;
+        });
+
+        btnCero.addEventListener("click", () => {
+            console.clear();
+            console.warn("Click en volver a 0");
+            resultado= 0;
+            imprimirEnPantalla();
+        });
+
+        //Crear Mi función. En cada operación se podría poner imprimirEnPantalla(); ya que esta función nos permite abreviar el console y el txtResultado.
+        const imprimirEnPantalla = function () { 
+        //imprimir resultado en la consola
+        console.log(resultado);
+        txtResultado.innerHTML = resultado;
+        }
+    </script>
+
+
+
+
+    <script>
+
+        let num1 = 4;
+        let num2 = 6;
+
+        const suma = num1 + num2;
+        console.warn("La suma de num1: ", num1, " y num2: ", num2, "es igual a ", suma);
+
+        const resta = num1 - num2;
+        console.log("La resta es: ", resta);
+
+        const multiplicar = num1 * num2;
+        const modulo = num1 % num2;
+        const division = num1 / num2
+
+        console.log(suma);
+
+    </script>
+</body>
+
+</html>

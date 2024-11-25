@@ -120,7 +120,7 @@ function sumar(a,b) {
 - Objeto (Object): colección de propiedades (características) y métodos (funcionalidades) y se escriben con { }.
 
 ```js
-// PRIMITIVOS: elementos simples, textos, números, true/false
+// PRIMITIVOS: elementos simples, textos, números, true/false. Pueden ser let (cuando puede ser un valor cambiante) o const(cuando va a ser así siempre)
 let texto = "Hola alumnos de CEI";
 let textoConComillas= 'Hola estoy "bien" ';
 let textoConComillasSimples= "I'm Tomi";
@@ -144,8 +144,9 @@ let onActive = false;
 let esMenorDeEdad = true;
 
 
-//REFERENCIALES
+//REFERENCIALES: son más fáciles de almacenar 
 // objetos o arrays (son constantes)
+
 
 //Listas / arrays / arreglos //La llave del camión alumnosCEI, hace referencia al camión completo de nombres de alumnos CEI(Pepe, Jaime, Laura)
 const alumnosDeDW = ["Daniel", "Jaime", "Laura", "Candela", "Liz"];

@@ -8,16 +8,29 @@
     <style>
         main {
             display: flex;
+            gap: 10px;
+        }
+
+        button {
+            border: 1px solid gray;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            padding: 10px;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            background-clip: text;
+            color: transparent;
+            font-size: 3rem;
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
-
-    <h1>Actividad de manipulación de Textos</h1>
-
-
     <pre>
+    <h1>Actividad de manipulación de Textos</h1>
 
     <main>
         <button id="ej1">EJ 1</button>
@@ -34,16 +47,15 @@
 <script>
     //Ejercicio 1:
     document.querySelector("#ej1").addEventListener("click", () => {
-        alert("HOLA MUNDO");
+        let text = "      Hola Mundo";
+
+        let resultado = text.trim()             //eliminar espacios en blanco 
+            .toUpperCase();             //convierte el texto en mayúscula
+
+
+        console.log(resultado);
+        alert(resultado);                           //imprime: HOLA MUNDO
     })
-
-    text = "      Hola Mundo";
-
-    resultado = text.trim()//eliminar espacios en blanco
-                    .toUpperCase();//convierte el texto en mayúscula
-
-
-    console.log(resultado); //imprime: HOLA MUNDO
 
 </script>
 
@@ -52,13 +64,32 @@
 
 <script>
     //Ejercicio 2:
+    //La corrección
     document.querySelector("#ej2").addEventListener("click", () => {
-        alert("¿Contiene 'JS'?: True ¿Contiene 'PHP'?: True "); 
-    })
-    frase = "Estoy aprendiendo JS y PHP";
-    console.log("¿Contiene 'JS'?: ", frase.includes("JS")); //True
-    console.log("¿Contiene 'PHP'?: ", frase.includes("PHP")); //True
+        const texto = "Estoy aprendiendo Javascript y PHP";
 
+        let mensaje = "";
+
+        if (texto.includes("Javascript")) {
+            // En caso de truthy
+            mensaje += "Javascript SÍ está presente \n"
+        } else {
+            // En caso de falsy
+            mensaje += "Javascript NO está presente \n"
+        }
+
+        if (texto.includes("PHP")) {
+            // En caso de truthy
+            mensaje += "PHP SÍ está presente \n"
+        } else {
+            // En caso de falsy
+            mensaje += "PHP NO está presente \n"
+        }
+
+        console.log(mensaje)
+        alert(mensaje);
+    })
+    //Hay una img Forma-Liz para ver otra forma de resolver este código
 </script>
 
 
@@ -66,12 +97,34 @@
 
 <script>
     //Ejercicio 3:
+
+    const texto = "Lechuga, Tomate, Peras, Manzanas";
+    const listaItems = texto.split(", "); //Convertir string en lista
+
     document.querySelector("#ej3").addEventListener("click", () => {
-        alert("Lista de la compra:  (4) ['Lechuga', 'Tomate', 'Peras', 'Manzanas'] Parte de frase:  Manzanas");
+        //Todo lo siguiente son formas de resolver el ejercicio:
+        // const resultado = text.slice(24, 32);
+        // const resultado = text.slice(24);
+        // const resultado = listaItems[3];
+
+        //Otras formas:
+        // const cantDeItems = listaItems.lenght; // usamos lenght para calcula cuantos elementos hay en la lista
+        // const resultado = listaItems[cantDeItems - 1];
+
+
+        //Usando el método POP: pop() quita de la lista el último elemento. y lo guarda en resultado.
+        const resultado = listaItems.pop();
+
+        console.log(resultado);
+        console.log(listaItems);
+
+        imprimirResultado(resultado);
+
+        function imprimirResultado(mensaje) {
+            console.log(mensaje);
+            alert(mensaje);
+        }
     })
-    csv = "Lechuga, Tomate, Peras, Manzanas";
-    console.log("Lista de la compra: ", csv.split(", "));
-    console.log("Parte de frase: ", csv.slice(24, 32));
 
 </script>
 
@@ -81,15 +134,22 @@
 <script>
     //Ejercicio 4:
     document.querySelector("#ej4").addEventListener("click", () => {
-        alert("Hólá génté dé Váléncíá");
+        let tildes = "Amo los atardeceres";
+
+        //Posibles soluciones:
+        // const resultado = "Ámó lós átárdécérés";
+        // const resultado = tildes.replace("Amo los atardeceres", "Ámó lós átárdécérés");
+
+        let resultado = tildes.replace("a", "á").replace("e", "é").replace("i", "í").replace("o", "ó").replace("u", "ú");
+
+
+        imprimirResultado(resultado);
+
+        function imprimirResultado(mensaje) {
+            console.log(mensaje);
+            alert(mensaje);
+        }
     })
-
-    frase = "Hola gente de Valencia";
-    console.log("Reemplazar todos los 'a', 'e', 'i', 'o', 'u' por 'á', 'é', 'í', 'ó', 'ú': ", frase.replace(/aeiou/g, "áéíóú") );
-
-    // frase = "Hola gente de Valencia";
-    // console.log("Reemplazar todos los 'a', 'e', 'i', 'o', 'u' por 'á', 'é', 'í', 'ó', 'ú': ", frase.replace(/Hola gente de Valencia/g, "Hólá génté dé Váléncíá") );
-
 </script>
 
 
@@ -98,14 +158,38 @@
 <script>
     //Ejercicio 5:
     document.querySelector("#ej5").addEventListener("click", () => {
-        alert("Hola");
+
+        //Solucion incorrecta, estamos comparando llaves de camiones en vez de comparar camiones
+        // const array1 = ["Manzana", "Pera", "Uvas"];
+        // const array2 = ["manzana", "pera", "uvas"];
+
+        // console.log(array1 == array2);
+
+
+        //Solución 1
+        // let resultado = "Los arrays son iguales";
+        // if(array1[0] != array2[0]) { resultado = "Los arrays son distintos"; }
+        // if(array1[1] != array2[1]) { resultado = "Los arrays son distintos"; }
+        // if(array1[2] != array2[2]) { resultado = "Los arrays son distintos"; }
+
+        //Solución 2
+        let resultado = "Los arrays son iguales";
+        if(   (array1[0] !=array2[0])  (array1[1] !=array2[1])  (array1[2] !=array2[2]) ){
+            resultado = "Los arrays son distintos";
+        }
+
+        //Solución 3
+        Img: 3;
+
+
+
+        imprimirResultado(resultado);
+
+        function imprimirResultado(mensaje) {
+            console.log(mensaje);
+            alert(mensaje);
+        }
     })
-
-    val1= ["Manzana", "Pera", "Uvas"];
-    val2= ["manzana", "pera", "uvas"];
-
-    const sonIguales = (val1 == val2);
-    const sonEstrictamenteIguales = (val1 === val2);
 
 </script>
 

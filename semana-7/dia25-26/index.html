@@ -15,36 +15,116 @@
 <body>
 
     <h1>Actividad de manipulación de Textos</h1>
-    
-    
+
+
     <pre>
 
     <main>
-
+        <button id="ej1">EJ 1</button>
+        <button id="ej2">EJ 2</button>
+        <button id="ej3">EJ 3</button>
+        <button id="ej4">EJ 4</button>
+        <button id="ej5">EJ 5</button>
+        <button id="ej6">EJ 6</button>
     </main>
-    1) Convertir el texto "      Hola Mundo" todo en mayúsculas sin espacios al principio o final
+    
+
+1) Convertir el texto "      Hola Mundo" todo en mayúsculas sin espacios al principio o final
 
 <script>
     //Ejercicio 1:
-docuement.querySelector("#ej1").addEventListener("click",()=>{
-    alert("Hola");
-})
+    document.querySelector("#ej1").addEventListener("click", () => {
+        alert("HOLA MUNDO");
+    })
 
-let text = "      Hola Mundo";
+    text = "      Hola Mundo";
 
-console.log(text.toUpperCase());
+    resultado = text.trim()//eliminar espacios en blanco
+                    .toUpperCase();//convierte el texto en mayúscula
 
 
-
+    console.log(resultado); //imprime: HOLA MUNDO
 
 </script>
-   
-    2) Del texto "Estoy aprendiendo JS y PHP" indicar si esta presente Javascript, y si esta presente PHP.
-    3) Separar el siguiente texto en una lista e imprimir el último valor "Lechuga, Tomate, Peras, Manzanas".
-    4) De cualquier frase que ingrese, agregar tildes a todas las vocales. ej: "practicando Javascript" => práctícándó Jáváscrípt
-    5) Ver si estos 2 arrays son iguales ["Manzana", "Pera", "Uvas"] y ["manzana", "pera", "uvas"].
-    6) Convertir el texto "tOMi123!" en "tomi123!" 
-    </pre>
+
+
+2) Del texto "Estoy aprendiendo JS y PHP" indicar si esta presente Javascript, y si esta presente PHP.
+
+<script>
+    //Ejercicio 2:
+    document.querySelector("#ej2").addEventListener("click", () => {
+        alert("¿Contiene 'JS'?: True ¿Contiene 'PHP'?: True "); 
+    })
+    frase = "Estoy aprendiendo JS y PHP";
+    console.log("¿Contiene 'JS'?: ", frase.includes("JS")); //True
+    console.log("¿Contiene 'PHP'?: ", frase.includes("PHP")); //True
+
+</script>
+
+
+3) Separar el siguiente texto en una lista e imprimir el último valor "Lechuga, Tomate, Peras, Manzanas".
+
+<script>
+    //Ejercicio 3:
+    document.querySelector("#ej3").addEventListener("click", () => {
+        alert("Lista de la compra:  (4) ['Lechuga', 'Tomate', 'Peras', 'Manzanas'] Parte de frase:  Manzanas");
+    })
+    csv = "Lechuga, Tomate, Peras, Manzanas";
+    console.log("Lista de la compra: ", csv.split(", "));
+    console.log("Parte de frase: ", csv.slice(24, 32));
+
+</script>
+
+
+4) De cualquier frase que ingrese, agregar tildes a todas las vocales. ej: "practicando Javascript" => práctícándó Jáváscrípt
+
+<script>
+    //Ejercicio 4:
+    document.querySelector("#ej4").addEventListener("click", () => {
+        alert("Hólá génté dé Váléncíá");
+    })
+
+    frase = "Hola gente de Valencia";
+    console.log("Reemplazar todos los 'a', 'e', 'i', 'o', 'u' por 'á', 'é', 'í', 'ó', 'ú': ", frase.replace(/aeiou/g, "áéíóú") );
+
+    // frase = "Hola gente de Valencia";
+    // console.log("Reemplazar todos los 'a', 'e', 'i', 'o', 'u' por 'á', 'é', 'í', 'ó', 'ú': ", frase.replace(/Hola gente de Valencia/g, "Hólá génté dé Váléncíá") );
+
+</script>
+
+
+5) Ver si estos 2 arrays son iguales ["Manzana", "Pera", "Uvas"] y ["manzana", "pera", "uvas"].
+
+<script>
+    //Ejercicio 5:
+    document.querySelector("#ej5").addEventListener("click", () => {
+        alert("Hola");
+    })
+
+    val1= ["Manzana", "Pera", "Uvas"];
+    val2= ["manzana", "pera", "uvas"];
+
+    const sonIguales = (val1 == val2);
+    const sonEstrictamenteIguales = (val1 === val2);
+
+</script>
+
+
+6) Convertir el texto "tOMi123!" en "tomi123!" 
+
+<script>
+    //Ejercicio 6:
+    document.querySelector("#ej6").addEventListener("click", () => {
+        alert("Hola");
+    })
+
+    text = "tOMi123!";
+    console.log(text.toLowerCase()); // imprime: "tomi123!"
+</script>
+    
+    
+
+</pre>
     <script>
 
 

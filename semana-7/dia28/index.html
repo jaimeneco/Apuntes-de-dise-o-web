@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <!-- <script>
+        //Ejercicio 1. Crear una función que reciba un número y devuelva si es par o impar.
+        function esPar(numero) {
+            // let txtParImpar = "";
+            // if (numero % 2 == 0) { //soy par
+            //     txtParImpar="Soy un número par";
+            // }
+            txtPar = (numero % 2 == 0) ? "Par"
+                : "Impar"
+
+            return `Tu número ${numero} es ${txtPar}`;
+        }
+        //pedirle un número al usuario
+        let numero = prompt("Ingresa un número");
+        let resultado = esPar(numero);
+        alert(resultado);
+    </script> -->
+
+
+
+    <!-- <script>
+        // Ejercicio 2. Crear una función que reciba un número y devuelva si es positivo,negativo o cero.
+        function esPositivo(numero) {
+            txtPositivo = (numero > 0) ? "Positivo"
+                : "Negativo";
+
+            if (numero == 0) {
+                txtPositivo = "Cero";
+            }
+
+            return `Tu número ${numero} es ${txtPositivo}`;
+        }
+
+        //Pedirle un número al usuario
+        let numero = prompt("Ingresa un número");
+        let resultado = esPositivo(numero);
+        alert(resultado);
+    </script> -->
+
+
+
+
+    <!-- <script>
+        // Ejercicio 3. Crear una función que si le envío una edad me devuelva si es mayor o menor de edad.
+        function esMayor(numero) {
+            txtMayor = (numero >= 18) ? "Mayor de edad"
+                : "Menor de edad";
+
+            // if (numero == 0) {
+            //     txtPositivo = "Cero";
+            // }
+
+            return `Tu número ${numero} es ${txtMayor}`;
+        }
+
+        //Pedirle un número al usuario
+        let numero = prompt("Ingresa un número");
+        let resultado = esMayor(numero);
+        alert(resultado);
+    </script> -->
+
+
+
+
+    <script>
+        // Ejercicio 4. Crear una función a la que le indico el día de la semana y me devuelva si es un día laboral o no.
+        function noEsLaboral(txt) {
+            txtNoLaboral = (txt = "Sábado", "Domingo") ? "No laborable"
+                : "Laborable";
+
+            return `El ${txt} es ${txtlaboral}`;
+        }
+
+        //Pedirle un texto al usuario
+        let txt = prompt("Ingresa un día de la semana");
+        let resultado = noEsLaboral(txt);
+        alert(resultado);
+
+    </script>
+
+
+
+
+    <!-- <script>
+        // Ejercicio 5. Crear una función donde sus parametros sean jugador1 y jugador2, y devuelva si el jugador1 le gana a jugador2 en un juego de "piedra", "papel" o "tijera".
+        function esMayor(numero) {
+            txtMayor = (numero >= 18) ? "Mayor de edad"
+                : "Menor de edad";
+
+            if (numero == 0) {
+                txtPositivo = "Cero";
+            }
+
+            return `Tu número ${numero} es ${txtMayor}`;
+        }
+
+        //Pedirle un número al usuario
+        let numero = prompt("Ingresa un número");
+        let resultado = esMayor(numero);
+        alert(resultado);
+    </script> -->
+
+    def gana_jugador(jugador1, jugador2):
+    # Convertimos las entradas a minúsculas para evitar problemas de mayúsculas
+    jugador1 = jugador1.lower()
+    jugador2 = jugador2.lower()
+    
+    if jugador1 == jugador2:
+        return "Es un empate"
+    elif (jugador1 == "piedra" and jugador2 == "tijera") or \
+         (jugador1 == "tijera" and jugador2 == "papel") or \
+         (jugador1 == "papel" and jugador2 == "piedra"):
+        return "Jugador 1 gana"
+    else:
+        return "Jugador 2 gana"
+
+# Ejemplo de uso
+resultado = gana_jugador("Piedra", "Tijera")
+print(resultado)  # Salida: Jugador 1 gana
+
+
+<script>
+    /**
+     * Esta función suma 2 números:
+     * 
+     * @params {number} num1 - Es el primer número
+     * @params {number} num2 - Es el segundo número
+     * @returns {number} - la suma de los  números
+     */
+
+    // Ejemplo de forma antigua de llamar a las funciones.
+    function Sumar(num1, num2){
+        return num1+num2;
+    }
+
+    // Ejemplo de forma actual de función flecha.
+    const Sumar = (num1, num2) => {
+        return num1+num2;
+    }
+
+
+const btn1 = document.querySelector("#btn1");
+//ej de función flecha sin nombrar
+btn1.addEventListener("click",  (num1, num2) => {
+    return num1+num2;
+});
+
+    const valor = Sumar(5,3); //8
+
+
+
+    const alumno = {
+        nombre: "John",
+        edad: 25,
+        estudiar: function irAEstudiar(materia) {
+            alert("Estoy estudiando" +materia);
+        }
+    }
+
+    alumno.estudiar("programación")
+    
+</script>
+</body>
+
+</html>

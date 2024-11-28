@@ -160,8 +160,8 @@
     document.querySelector("#ej5").addEventListener("click", () => {
 
         //Solucion incorrecta, estamos comparando llaves de camiones en vez de comparar camiones
-        // const array1 = ["Manzana", "Pera", "Uvas"];
-        // const array2 = ["manzana", "pera", "uvas"];
+        const array1 = ["Manzana", "Pera", "Uvas"];
+        const array2 = ["manzana", "pera", "uvas"];
 
         // console.log(array1 == array2);
 
@@ -172,22 +172,24 @@
         // if(array1[1] != array2[1]) { resultado = "Los arrays son distintos"; }
         // if(array1[2] != array2[2]) { resultado = "Los arrays son distintos"; }
 
-        //Solución 2
-        let resultado = "Los arrays son iguales";
-        if(   (array1[0] !=array2[0])  (array1[1] !=array2[1])  (array1[2] !=array2[2]) ){
-            resultado = "Los arrays son distintos";
-        }
+        // //Solución 2 operador || OR - "o"
+        // let resultado = "Los arrays son iguales";
+        // if(   (array1[0] !=array2[0]) || (array1[1] !=array2[1]) || (array1[2] !=array2[2]) ){
+        //     resultado = "Los arrays son distintos";
+        // }
 
-        //Solución 3
-        Img: 3;
+        //Solución 3 operador && AND - "y"
+        let resultado = "Los arrays son distintos";
+        if ((array1[0] == array2[0]) && (array1[1] == array2[1]) && (array1[2] != array2[2])) {
+            resultado = "Los arrays son iguales";
 
+            imprimirResultado(resultado);
 
+            function imprimirResultado(mensaje) {
+                console.log(mensaje);
+                alert(mensaje);
+            }
 
-        imprimirResultado(resultado);
-
-        function imprimirResultado(mensaje) {
-            console.log(mensaje);
-            alert(mensaje);
         }
     })
 
@@ -197,13 +199,35 @@
 6) Convertir el texto "tOMi123!" en "tomi123!" 
 
 <script>
-    //Ejercicio 6:
-    document.querySelector("#ej6").addEventListener("click", () => {
-        alert("Hola");
-    })
+    // //Ejercicio 6:
 
-    text = "tOMi123!";
-    console.log(text.toLowerCase()); // imprime: "tomi123!"
+    //Generando la función
+    //Las variables que posee la función son Parámetros
+    function imprimirResultado(mensaje){
+
+        const miNuevoMensaje = imprimirResultado("soy el mensaje");
+        console.log(miNuevoMensaje); // SOY EL MENSAJE
+    }
+
+    // Ejecutando la función
+    // Los valores que le mando a la función de argumentos.
+    // imprimirResultado("Hola a todos", "mensaje 2");
+    // console.log("otra cosa...");
+    // imprimirResultado("Chau a todos, "mensaje 2);
+
+
+    // document.querySelector("#ej6").addEventListener("click", () => {
+    //     let text = "tOMi123!";
+    //     console.log(text.toLowerCase()); // imprime: "tomi123!"
+
+    //     imprimirResultado(resultado);
+
+    //     function imprimirResultado(mensaje) {
+    //         console.log(mensaje);
+    //         alert(mensaje);
+    //     })
+    // }
+
 </script>
     
     

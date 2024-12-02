@@ -8,4 +8,3 @@ Utilizando funciones, condicionales y operadores comparativos, realizar los sigu
 5. Crear una función donde sus parametros sean jugador1 y jugador2, y devuelva si el jugador1 le gana a jugador2 en un juego de "piedra", "papel" o "tijera".
 ---------------------------
 
-

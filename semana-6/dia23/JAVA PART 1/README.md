@@ -1,4 +1,5 @@
 # Javascript
+- Un método es una función asociado a un objeto.
 
 Es un lenguaje de programación de alto nivel, interpretado y orientado a objetos. Se utilixa para crear contenido dinámico e interactivo en sitios web.
 
@@ -144,7 +145,7 @@ let onActive = false;
 let esMenorDeEdad = true;
 
 
-//REFERENCIALES: son más fáciles de almacenar 
+//RELACIONALES: son más fáciles de almacenar 
 // objetos o arrays (son constantes)
 
 

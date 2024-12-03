@@ -159,8 +159,10 @@
 
         function AIvsAI() {
             const opciones = ['piedra', 'papel', 'tijera'];
-
+            
+            //ejecuta un función cada X tiempo
             setInterval(function () {
+                //Obtener un número al azar del uno al 2
                 const numero = Math.floor(Math.random() * opciones.length);
                 const usuario = opciones[numero];
                 jugar(usuario);

@@ -24,9 +24,6 @@ const res = cuadrado(3); // 9
 let res2 = cuadrado(5); // 25
 
 
-
-
-
 //--------------------------------------
 // Funciones flecha: 
 // función que devuelve el cubo de un número

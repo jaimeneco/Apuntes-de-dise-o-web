@@ -7,9 +7,9 @@
 </head>
 <body>
 
-    <button onClick="jugar('piedra')">Piedra ✊</button>
-    <button onClick="jugar('papel')">Papel ✋</button>
-    <button onClick="jugar('tijera')">Tijera ✂️</button>
+    <button id="btnPiedra" onClick="jugar('piedra')">Piedra ✊</button>
+    <button id="btnPapel" onClick="jugar('papel')">Papel ✋</button>
+    <button id="btnTijera" onClick="jugar('tijera')">Tijera ✂️</button>
 
 
     <button onClick="
@@ -63,7 +63,13 @@
 
         const txtResultado = document.querySelector(".txtResultado");
         const txtStats = document.querySelector(".txtStats");
+        
+        //BOTON DE PIEDRA PAPEL TIJERA
+        const btnPiedra = document.querySelector("#btnPiedra");
+        const btnPapel = document.querySelector("#btnPapel");
+        const btnTijera = document.querySelector("#btnTijera");
 
+btnPiedra.addEventListener("click", () =>{})
         const objScore = {
             ganadas: 0,
             perdidas: 0,
@@ -172,7 +178,7 @@
             // jugar(usuario);
         }
 
-        function graficar() {
+        const graficar = () => {
             const total = objScore.ganadas + objScore.perdidas;// +objScore.empatadas;
             const porcentajeGanadas = (objScore.ganadas / total) * 100;
             const porcentajePerdidas = (objScore.perdidas / total) * 100;

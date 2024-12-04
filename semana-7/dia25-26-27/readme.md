@@ -238,8 +238,8 @@ console.log("Desde el índice 9 al final: " , frase.slice(9)); //me dirá: "Java
 
 // Replace
 let frase = "Hola mundo. hola universo";
-console.log("Reemplazar 'hola' por 'Hola': ", frase.replace("hola", "Hola") );//solo cambia un hola
-console.log("Reemplazar todos los 'hola' por 'Hola': ", frase.replace(/hola/g, "Hola") );// cambia todos los hola usando regEx (expresiones regulares)
+console.log("Reemplazar 'hola' por 'Hola': ", frase.replace("hola", "Hola") );//solo cambia el primer hola que encuentra.
+console.log("Reemplazar todos los 'hola' por 'Hola': ", frase.replace(/hola/g, "Hola") );// cambia todos los hola a nivel global usando regEx (expresiones regulares)
 
 
 // Trim

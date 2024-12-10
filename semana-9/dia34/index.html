@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <!-- <script src="./ss"></script> -->
+</head>
+
+<body>
+    <h1>Lista de Tareas</h1>
+
+    <div>
+        <ul id="listaTareas">
+            <li>Tarea 1</li>
+            <li>Tarea 2</li>
+        </ul>
+    </div>
+
+    <form id="formTarea">
+        <input id="txtTarea" type="text" placeholder="Ingrese una tarea">
+        <button type="sumbit">Agregar Tarea</button>
+    </form>
+
+    <script>
+        //---------------------------------------------------
+        // 1. Constantes y variables
+        //---------------------------------------------------
+        const formu = document.getElementById("formTarea");
+        const txtTarea = document.getElementById("txtTarea");
+        const boxTareas = document.getElementById("listaTareas");
+
+        const listaDeTareas = ["Ordenar el código JS", "Crear las Funciones", "Probar el programa"];
+
+
+
+        //---------------------------------------------------
+        // 2. Funciones utilitarias (reutilizables)
+        //      * esto también se suele hacer en un archvo aparte por ej: utils.js
+        //---------------------------------------------------
+
+
+
+
+        //---------------------------------------------------
+        // 3. Funciones principales de nuestra web/programa/app.
+        //---------------------------------------------------
+        function mostrarTareas() {
+
+            // Borrar todo el contenido de la caja
+            boxTareas.innerHTML = "";
+
+            // Cargamos las nuevas tareas
+            listaDeTareas.forEach((tarea) => {
+                console.log("Tarea es: ", tarea);
+                boxTareas.innerHTML += `<li>${tarea}</li>`;
+            });
+        }
+
+
+        //---------------------------------------------------
+        // 4. EventListeners
+        //---------------------------------------------------
+
+        // escuchamos al evento cuando se envía
+        formu.addEventListener("submit", (event) => {
+
+            //NO envíes el formulario, porque quiero hacer cosas antes.
+            event.preventDefault();
+
+            const nuevaTarea = txtTarea.value.trim(); // el texto del input
+            console.log(nuevaTarea);
+
+            // Tarea inválida (hacemos un return)
+            if (nuevaTarea == "") {
+                alert("Por favor, ingresa una tarea válida"); 
+                return;
+            }
+                //Tarea válida
+                txtTarea.value = ""; // limpiar mi input
+                listaDeTareas.push(nuevaTarea); // push() es para agregar nuevo item a la lista.
+                mostrarTareas();
+            }
+
+        );
+
+
+        //---------------------------------------------------
+        // 5. Inicializar nuestro programa
+        //---------------------------------------------------
+        mostrarTareas();
+    </script>
+</body>
+
+</html>

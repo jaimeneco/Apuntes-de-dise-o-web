@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs</title>
+    <style>
+        .Tabs-contenido {
+            display: none;
+        }
+
+        .Tabs-buttons {
+            display: flex;
+            list-style: none;
+            cursor: pointer;
+        }
+
+        .Tabs-button {
+            padding: 10px;
+            background-color: #ddd;
+            border: 1px solid #ccc;
+        }
+
+        .u-active {
+            background-color: #fff;
+            border: 1px solid green;
+        }
+
+        .u-visible {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Tabs">
+
+        <ul class="Tabs-buttons">
+            <li data-tab="Pagina1" class="Tabs-button">Home</li>
+            <li data-tab="Pagina2" class="Tabs-button">Perfil</li>
+            <li data-tab="Pagina3" class="Tabs-button">Tareas</li>
+        </ul>
+
+        <div class="Tabs-container">
+            <div id="Pagina1" class="Tabs-contenido">
+                <h2>Página 1</h2>
+                <p>Contenido de página 1</p>
+            </div>
+            <div id="Pagina2" class="Tabs-contenido">
+                <h2>Página 2</h2>
+                <p>Contenido de página 2</p>
+            </div>
+            <div id="Pagina3" class="Tabs-contenido">
+                <h2>Página 3</h2>
+                <p>Contenido de página 3</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 1. Creamos variables y constantes
+        const listaBotones = document.querySelectorAll(".Tabs-button");
+        const listaPaginas = document.querySelectorAll(".Tabs-contenido");
+
+        // 2. Creamos funciones y eventListeners
+        listaBotones.forEach( boton => {
+            boton.addEventListener("click", ()=> {
+
+                //leer el dataset con atributo en "data-tab"
+                // por ejemplo si tengo "data-edad" debería leerlo con "boton.dataset.edad"
+                const targetId = boton.dataset.tab;
+                const target = document.getElementById(targetId);
+                console.log(targetId)
+
+                quitarClases();
+
+                // al target con id "paginaX" le agregue la clase u-visible
+                target.classList.add("u-visible");
+
+                // agregar la clase active al Tabs-Button
+                boton.classList.add("u-active");
+
+                // listaBotones.forEach( item => {
+                //     item.classList.remove("u-active");
+                // })
+                // listaBotones.forEach( item => {
+                //     item.classList.remove("u-active");
+                // })
+            });
+        });
+        //funcion que quita clases a mis elementos activos
+        function quitarClases(){
+            listaBotones.forEach( item => {
+                item.classList.remove("u-active");
+            })
+            listaPaginas.forEach( pagina => {
+                pagina.classList.remove("u-visible");
+        })
+    }
+
+
+        // 3. Iniciamos nuestro programa
+        listaBotones[0].click();
+    </script>
+</body>
+
+</html>

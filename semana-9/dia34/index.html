@@ -33,7 +33,7 @@
 
         // const listaDeTareas = ["Ordenar el código JS", "Crear las Funciones", "Probar el programa"];
 
-        const listaDeTareas = [
+        let listaDeTareas = [
             { id: 1, titulo: "Ordenar el código JS", isCompletada: true },
             { id: 524, titulo: "Crear las Funciones", isCompletada: false },
             { id: 1056, titulo: "Probar el programa", isCompletada: false }
@@ -89,18 +89,57 @@
             }
             //Tarea válida
             txtTarea.value = ""; // limpiar mi input
-            listaDeTareas.push(nuevaTarea); // push() es para agregar nuevo item a la lista.
+            // listaDeTareas.push(nuevaTarea); push() es para agregar nuevo item a la lista.
+
+            // simulamos un id nuevo, ebtre 0 y 99
+            const nuevoID = parseInt(Math.random()*100);
+
+            const objetoTarea = {id:123123, titulo: nuevaTarea, isCompletada: false}
+            console.log("Nueva tarea a agregar es: ", objetoTarea);
+
+            listaDeTareas.push(objetoTarea);
             mostrarTareas();
         }
 
         function eliminarTarea() {
             alert("Eliminar tarea: "+ idTarea);
             //Modificar mi lista y eliminar la tarea idTarea
+
+            //1.Método utilizando forEach y Splice: (principiante)
+            // listaDeTareas.forEach( (tarea, posicion)=> {
+            //     if(tarea.id == idTarea){
+            //         listaDeTareas.splice(posicion, 1);
+            //     }
+            // });
+
+            //2.Método utilizando findIndex: (algo avanzado)
+            // const posicion = listaDeTareas.findIndex( tarea => tarea.id == idTarea );
+            //    listaDeTareas.splice(posicion, 1);
+            //    
+            // }
+
+            //3.Método usando Filter (dificil): para que este método funciones listaDeTareas debe estar definido con LET.
+            listaDeTareas = listaDeTareas.filter( tarea => tarea.id == idTarea );
+
             mostrarTareas();
         }
 
         function completarTarea(idTarea) {
             alert("Completando tarea: "+ idTarea);
+        //Modificar mi lista y cambiar el booleano de true a flase o de false a true
+        
+        //1.Buscar el elemento con el id deseado:
+        const tarea = listaDeTareas.find( (t)=> t.id == idTarea );
+        console.log("Tarea encontrada: ", tarea);
+
+        mostrarTareas() // re-imprimir ista actualizada;
+
+        //2. Cambiar el valor de isCompletada:
+        
+        
+        
+        
+        
         }
 
         //---------------------------------------------------

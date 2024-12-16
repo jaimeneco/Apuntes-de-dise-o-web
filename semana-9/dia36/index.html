@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs</title>
+    <style>
+        .Tabs-contenido {
+            display: none;
+        }
+
+        .Tabs-buttons {
+            display: flex;
+            list-style: none;
+            cursor: pointer;
+        }
+
+        .Tabs-button {
+            padding: 10px;
+            background-color: #ddd;
+            border: 1px solid #ccc;
+            border-radius: 20%;
+        }
+
+        .u-active {
+            background-color: #fff;
+            border: 1px solid black;
+        }
+
+        .u-visible {
+            display: block;
+        }
+        .acordeon {
+            border: 1px solid #ccc;
+        }
+
+        .acordeon-item {
+            padding: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .acordeon-content {
+            display: none;
+        }
+
+        .acordeon-header {
+            background-color: lightgray;
+        }
+
+        .active .acordeon-content {
+            display: block;
+        }
+
+        .active .acordeon-header {
+            background-color: lightsalmon;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Tabs">
+
+        <ul class="Tabs-buttons">
+            <li data-tab="Pagina1" class="Tabs-button">Tareas</li>
+            <li data-tab="Pagina2" class="Tabs-button">Acordeón</li>
+            <li data-tab="Pagina3" class="Tabs-button">Tareas pendientes</li>
+        </ul>
+
+        <div class="Tabs-container">
+            <div id="Pagina1" class="Tabs-contenido">
+                <h1>Lista de Tareas</h1>
+
+    <div>
+        <ul id="listaTareas">
+            <li>Tarea 1</li>
+            <li>Tarea 2</li>
+        </ul>
+    </div>
+
+    <form id="formTarea">
+        <input id="txtTarea" type="text" placeholder="Ingrese una tarea">
+        <button type="sumbit">Agregar Tarea</button>
+    </form>
+            </div>
+            <div id="Pagina2" class="Tabs-contenido">
+                <div class="acordeon">
+                    <div class="acordeon-item">
+                        <div class="acordeon-header">Sección 1</div>
+                        <div class="acordeon-content">Contenido sección 1</div>
+                    </div>
+                    <div class="acordeon-item">
+                        <div class="acordeon-header">Sección 2</div>
+                        <div class="acordeon-content">Contenido sección 2</div>
+                    </div>
+                    <div class="acordeon-item">
+                        <div class="acordeon-header">Sección 3</div>
+                        <div class="acordeon-content">Contenido sección 3</div>
+                    </div>
+                </div>
+            </div>
+            <div id="Pagina3" class="Tabs-contenido">
+                <h2>Página 3</h2>
+                <p>Contenido de página 3</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 1. Creamos variables y constantes
+        const listaBotones = document.querySelectorAll(".Tabs-button");
+        const listaPaginas = document.querySelectorAll(".Tabs-contenido");
+
+        const headers = document.querySelectorAll(".acordeon-header");
+        const items = document.querySelectorAll(".acordeon-item");
+
+        const formu = document.getElementById("formTarea");
+        const txtTarea = document.getElementById("txtTarea");
+        const boxTareas = document.getElementById("listaTareas");
+        let listaDeTareas = [
+            { id: 1, titulo: "Ordenar el código JS", isCompletada: true },
+            { id: 524, titulo: "Crear las Funciones", isCompletada: false },
+            { id: 1056, titulo: "Probar el programa", isCompletada: false },]
+
+        // 2. Creamos funciones y eventListeners
+        listaBotones.forEach(boton => {
+            boton.addEventListener("click", () => {
+
+                //leer el dataset con atributo en "data-tab"
+                // por ejemplo si tengo "data-edad" debería leerlo con "boton.dataset.edad"
+                const targetId = boton.dataset.tab;
+                const target = document.getElementById(targetId);
+                console.log(targetId)
+
+                quitarClases();
+
+                // al target con id "paginaX" le agregue la clase u-visible
+                target.classList.add("u-visible");
+
+                // agregar la clase active al Tabs-Button
+                boton.classList.add("u-active");
+
+                // listaBotones.forEach( item => {
+                //     item.classList.remove("u-active");
+                // })
+                // listaBotones.forEach( item => {
+                //     item.classList.remove("u-active");
+                // })
+            });
+        });
+
+        //funcion que quita clases a mis elementos activos
+        function quitarClases() {
+            listaBotones.forEach(item => {
+                item.classList.remove("u-active");
+            })
+            listaPaginas.forEach(pagina => {
+                pagina.classList.remove("u-visible");
+            })
+        };
+
+        headers.forEach ((header) => {
+            header.addEventListener("click", ()=> {
+                //alert("click");
+                const item = header.closest(".acordeon-item");
+
+                // quitar el active de todos: se puede poner como comentario o no
+                // items.forEach( elemento => {
+                //     elemento.classList.remove("active");
+                // });
+
+                // agregar el active a item
+                item.classList.toggle("active");
+            });
+        });
+
+        // 3. Iniciamos nuestro programa
+        listaBotones[0].click();
+
+        headers[0].click();
+
+
+//----------------------------------------------
+
+        // JavaScript de la Lista de Tareas
+
+//----------------------------------------------
+
+function mostrarTareas() {
+
+// Borrar todo el contenido de la caja
+boxTareas.innerHTML = "";
+
+// Cargamos las nuevas tareas
+listaDeTareas.forEach((tarea) => {
+    console.log("Tarea es: ", tarea);
+    
+    
+    const titulo = tarea.titulo;
+    const id =tarea.id;
+
+    // convertir esta linea para que isChecked sea igual a "checked" o a ""
+    const isChecked = tarea.isCompletada ? "checked" : "";
+
+    // boxTareas.innerHTML += `<li>${titulo}</li>`;
+    boxTareas.innerHTML += `
+    <li>
+        <input type="checkbox" name="chk_completada" ${isChecked}/>
+        <label for="${id}">${titulo}</label>
+        <button onclick="eliminarTarea(${id})">X</button>
+        <button onclick="completarTarea(${id})">Completar</button>
+    </li>
+    `;
+});
+}
+
+function agregarTarea() {
+const nuevaTarea = txtTarea.value.trim(); // el texto del input
+console.log(nuevaTarea);
+
+// Tarea inválida (hacemos un return)
+if (nuevaTarea == "") {
+    alert("Por favor, ingresa una tarea válida");
+    return;
+}
+//Tarea válida
+txtTarea.value = ""; // limpiar mi input
+// listaDeTareas.push(nuevaTarea); push() es para agregar nuevo item a la lista.
+
+// simulamos un id nuevo, ebtre 0 y 99
+const nuevoID = parseInt(Math.random()*100);
+
+const objetoTarea = {id:123123, titulo: nuevaTarea, isCompletada: false}
+console.log("Nueva tarea a agregar es: ", objetoTarea);
+
+listaDeTareas.push(objetoTarea);
+mostrarTareas();
+}
+
+function eliminarTarea() {
+alert("Eliminar tarea: "+ idTarea);
+
+//3.Método usando Filter (dificil): para que este método funciones listaDeTareas debe estar definido con LET.
+listaDeTareas = listaDeTareas.filter( tarea => tarea.id == idTarea );
+
+mostrarTareas();
+}
+
+function completarTarea(idTarea) {
+alert("Completando tarea: "+ idTarea);
+//Modificar mi lista y cambiar el booleano de true a flase o de false a true
+
+//1.Buscar el elemento con el id deseado:
+const tarea = listaDeTareas.find( (t)=> t.id == idTarea );
+console.log("Tarea encontrada: ", tarea);
+
+mostrarTareas() // re-imprimir ista actualizada;
+
+//2. Cambiar el valor de isCompletada:
+
+}
+
+//---------------------------------------------------
+// 4. EventListeners
+//---------------------------------------------------
+
+// escuchamos al evento cuando se envía
+formu.addEventListener("submit", (event) => {
+
+//NO envíes el formulario, porque quiero hacer cosas antes.
+event.preventDefault();
+
+agregarTarea()
+}
+
+);
+
+//---------------------------------------------------
+// 5. Inicializar nuestro programa
+//---------------------------------------------------
+mostrarTareas();
+    </script>
+</body>
+
+</html>

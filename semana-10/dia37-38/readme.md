@@ -1,5 +1,9 @@
 https://help.one.com/hc/es/articles/115005585809-Usando-el-File-Manager-de-one-com#accessing
 
+
+<!-- De aquí se pueden bajar JSON ya formados: -->
+https://jsonplaceholder.typicode.com/ 
+
 # Creación de etiquetas HTML con js:
 El uso de innerHTML es rápido y sencillo. Es útil para grandes bloques de contenido.
 
@@ -40,6 +44,7 @@ document.body.insertBefore(fragmento, document.body.firstChild); // al principio
 # JSON "Javascript Object Notation"
 
 - Json es un formato de intercambio de datos muy utilizado en la actualidad. Es fácil de leer y escribir por humanos y fácil de interpretar y generar por las máquinas. Es muy similar a los objetos de JS, con la diferencia de que todas las características deben utilizar comillas dobles y que no se pueden incluir funciones o métodos, solo datos (list: string, booleanos, números).
+- Es la mejor forma de transferir información. Es un string (cadena de texto muy larga).
 
 ```js
 let objeto = {
@@ -304,10 +309,32 @@ const usuarios_json = [`
       "bs": "target end-to-end models"
     }
   }
-`]
+]`;
 
 let objetoRecuperador = JSON.parse(usuarios_json);
 console.log(objetoRecuperador);
 
+
+
+const lista_usuariosJS = JSON.parse(usuarios_json);
+console.log(lista_usuariosJS);
+
+const tarjeta = Document.querySelector(".tarjeta");
+
+function imprimirTarjetas(){
+
+  lista_usuariosJS.forEach( (usuario) => {
+    console.log(usuario.name);
+    console.log(usuario.email);
+    console.log(usuario.address);
+    console.log(usuario.company.name);
+
+    const nombre = usuario.nombre;
+    const email = usuario.email;
+    const address = usuario.address;
+    const company = usuario.nombre;
+
+  });
+};
 
 ```

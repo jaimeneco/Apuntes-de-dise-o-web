@@ -104,11 +104,11 @@ miPromesa.then(result => {
 ```
 
 ## Fetch con promesas
-Uno de los usos fundamentales de las promesas es el Fetch API para hacer peticiones web. 
-La función fetch() nos devuelve una promesa.
+Uno de los usos fundamentales de las promesas es el uso de la Fetch API para hacer peticiones HTTP a otros servidores. 
+La función fetch() nos permite hacer peticiones y nos devuelve una promesa.
 
 ```js
-fetch("https://jsonplaceholder.typicode.com/todos/1")
+fetch("https://jsonplaceholder.typicode.com/posts/3")
     // .then( jsonString => {
     //     return JSON.parse(jsonString);
     // })
@@ -127,20 +127,29 @@ fetch("https://jsonplaceholder.typicode.com/todos/1")
 
 ```js
 //con la palabra async decimos que esta función será asíncrona
-async function traerDatos(){
 
+async function traerDatos(){
     try {
 
-    const response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
-    const datos = await response.json(); // convierte mi jsonString en un objeto JS
-    console.log("mis datos son...", datos);
+        const response = await fetch("https://jsonplaceholder.typicode.com/users");
+        const datos = await response.json(); // convierte mi jsonString en un objeto JS
+        
+        console.log(datos);
+        console.log(datos[0].name); // trae el nombre del primer usuario
+        return datos;
 
-    } catch (error){
+        const responsePosts = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${datos[0].id}`);
+        listaPosts = aewait responsePosts.json
+
+        console.log
+
+    } catch (error) {
         console.log("Tuve un error:", error);
     }
 }
 
-let listaDeUsuarios = traerDatos();
+let listaDeUsuarios;
+listaDeUsuarios = traerDatos()
 ``` 
 
 EJEMPLO DE Fetch ANIDADOS CON async/Await:

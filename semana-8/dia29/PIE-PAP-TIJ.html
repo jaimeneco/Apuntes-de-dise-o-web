@@ -48,6 +48,7 @@
     <div style="width:100%; background: gray; display:flex; text-align:center;">
         <div style="background:red;">Ganadas</div>
         <div style="background:blue;">Perdidas</div>
+        <div style="background: green;">Empatadas</div>
     </div>
 
     <hr>
@@ -179,18 +180,22 @@ btnPiedra.addEventListener("click", () =>{})
         }
 
         const graficar = () => {
-            const total = objScore.ganadas + objScore.perdidas;// +objScore.empatadas;
+            const total = objScore.ganadas + objScore.perdidas + objScore.empatadas;
             const porcentajeGanadas = (objScore.ganadas / total) * 100;
             const porcentajePerdidas = (objScore.perdidas / total) * 100;
-            //const porcentajeEmpatadas=(objScore.empatadas/total)*100;
+            const porcentajeEmpatadas=(objScore.empatadas/total)*100;
 
             const divGanadas = document.querySelector("div>div:nth-child(1)");
             const divPerdidas = document.querySelector("div>div:nth-child(2)");
+            const divEmpatadas = document.querySelector("div>div:nth-child(3)")
 
             divGanadas.innerHTML = "Ganadas: " + Math.round(porcentajeGanadas) + "%";
             divPerdidas.innerHTML = "Perdidas: " + Math.round(porcentajePerdidas) + "%";
+            divEmpatadas.innerHTML = "Empatadas: " + Math.round(porcentajeGanadas) + "%";
+
             divGanadas.style.width = porcentajeGanadas + "%";
             divPerdidas.style.width = porcentajePerdidas + "%";
+            divEmpatadas.style.width = porcentajeEmpatadas + "%";
         }
 
 

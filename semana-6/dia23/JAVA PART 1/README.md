@@ -20,7 +20,7 @@ console.log("Mi número ahora vale: ", numero);
 ```
 
 Lenguaje orientado a objetos:
-- Javascript utiliza un paradigma (Orient O Programming), lo que significa que organiza el código en "objetos". Un objeto es una colección de propiedad y métodos que se pueden leer y manipular.
+- Javascript utiliza un paradigma (Orient Object Programming), lo que significa que organiza el código en "objetos". Un objeto es una colección de propiedad y métodos que se pueden leer y manipular.
 
 Perro:
 
@@ -29,6 +29,7 @@ Perro:
 - nombre: Lassie
 - size: grande
 - cantidadDePatas: 4
+
 
 // Métodos
 - ladrar(): hacer un ruido fuerte
@@ -99,7 +100,7 @@ PI=4; //devuelve error, ya que no es cierto.
 
 ```js
 /**
- * Esta es una función ue suma 2 números
+ * Esta es una función que suma 2 números
  * la obtuve de esta url: http://mis-sumas.com
  * 
  * @param {number} a - El primer número

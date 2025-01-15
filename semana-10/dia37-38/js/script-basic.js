@@ -1,62 +1,82 @@
 //-----------------------------------------------------------
 // 1. Declarar constantes y variables.
 //-----------------------------------------------------------
-const sliderImages = document.querySelector('.Slider-images');
-let images = document.querySelectorAll('.Slider-img');
-const btnNext = document.querySelector('#btnNext');
-const btnPrev = document.querySelector('#btnPrev');
-const spanActual = document.getElementById('actual');
-const spanTotal = document.getElementById('total');
-let currentImageIndex = 0;
+document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll('#slider-image');
+    const btnNext = document.querySelector('#btnNext');
+    const btnPrev = document.querySelector('#btnPrev');
+    const contador = document.querySelector('#slider-contador');
+
+    let currentImageIndex = 0;
+
+    const updateSlider = () => {
+        images.forEach((img, index) => {
+            img.classList.remove("active");
+            if (index === currentIndex) {
+                img.classList.add("active");
+            }
+        });
+
+        contador.textContent = `${currentIndex + 1} ${images.length}`;
+    };
+
+    btnPrev.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateSlider();
+    });
+
+    btnNext.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateSlider();
+    });
+
+    updateSlider();
+});
+
+
 const totalImages = images.length; // devuelve 0 porque images no encontró imágenes en el HTML.
 
 // Método 0: cargar imágenes directamente en nuestro HTML. Lo que hicimos el primer día
 
 
-// //Método 1: Lista de imágenes:
-// const lista_imagenes = [
-//     { file: "imagen1.jpg ", description: "imagen 1" },
-//     { file: "imagen2.jpg ", description: "imagen 2" },
-//     { file: "imagen3.jpg ", description: "imagen 3" },
-//     { file: "imagen4-long.jpg ", description: "imagen 4" },
-// ];
+//Método 1: Lista de imágenes:
+const lista_imagenes = [
+    { file: "imagen1.jpg ", description: "imagen 1" },
+    { file: "imagen2.jpg ", description: "imagen 2" },
+    { file: "imagen3.jpg ", description: "imagen 3" },
+    { file: "imagen4-long.jpg ", description: "imagen 4" },
+];
 
 // Método 2: Lista de imágenes de JSON (string)
-const lista_imagenes_json = `[
-    {
-        "file": "imagen1.jpg ",
-        "description": "imagen 1"
-    },
-    {
-        "file": "imagen2.jpg ",
-        "description": "imagen 2"
-    },
-    {
-        "file": "imagen3.jpg ",
-        "description": "imagen 3"
-    },
-    {
-        "file": "imagen4-long.jpg ",
-        "description": "imagen 4"
-    }
-]`;
+// const lista_imagenes_json = `[
+//     {
+//         "file": "imagen1.jpg ",
+//         "description": "imagen 1"
+//     },
+//     {
+//         "file": "imagen2.jpg ",
+//         "description": "imagen 2"
+//     },
+//     {
+//         "file": "imagen3.jpg ",
+//         "description": "imagen 3"
+//     },
+//     {
+//         "file": "imagen4-long.jpg ",
+//         "description": "imagen 4"
+//     }
+// ]`;
 
 // con JSON.parse(miStringDeJson) convertimos de JSON a Objeto JS.
 //Capt 1
 
 
 
-// Método 3: Lista de imágenes obtenida desde una "API" con promesas/fetch
-function traerImagenesAPI(){
-    //fetch('https://photos.google.com/misFotos')
-    fetch('./basededatos.json')
-}   
-
-
-
-
-
-
+// // Método 3: Lista de imágenes obtenida desde una "API" con promesas/fetch
+// function traerImagenesAPI(){
+//     //fetch('https://photos.google.com/misFotos')
+//     fetch('./basededatos.json')
+// }   
 
 //-----------------------------------------------------------
 // 2. Añadir EventListeners y funciones

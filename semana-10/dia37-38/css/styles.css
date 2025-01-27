@@ -1,5 +1,6 @@
 .Body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -17,17 +18,16 @@
     display: flex;
     width: 400px;
     height: 600px;
-    transition: transform 0.4s ease;
+    transition: transform 0.5s ease;
 }
 
-.Slider-img {
+.Slider-img{
     min-width: 400px;
     min-height: 600px;
     max-height: 600px;
     max-width: 400px;
     object-fit: contain;
 }
-
 
 .Btn {
     position: absolute;
@@ -40,13 +40,12 @@
     cursor: pointer;
 }
 
-/* Position de elementos */
-.u-izq {
-    left: 10px;
+.u-izq{
+left: 10px;
 }
 
-.u-der {
-    right: 10px;
+.u-der{
+right: 10px;
 }
 
 .Slider-contador {
